@@ -64,6 +64,14 @@
 
 
 
-<h1 id="常见问题"><a href="#常见问题" class="headerlink" title="常见问题"></a>常见问题</h1>]]></content>
+<h1 id="常见问题"><a href="#常见问题" class="headerlink" title="常见问题"></a>常见问题</h1><h2 id="blog中插入图片"><a href="#blog中插入图片" class="headerlink" title="blog中插入图片"></a>blog中插入图片</h2><p>在配置文件中打开<strong>文章资源文件夹</strong></p>
+<p><code>post_asset_folder: true</code></p>
+<p>Typora对于插入图片的支持做得非常好，在<code>文件-&gt;偏好设置-&gt;图像</code>中选择<code>复制到指定的路径</code> <code>./$&#123;filename&#125;</code> </p>
+<p>使用该配置后，可以直接复制网页中的图片地址，粘贴到Typora中后，会直接复制该图片到文章资源文件夹，同时自动更改路径。</p>
+<p>如复制网络路径的图片<code>https://...../image.jpg</code>粘贴到Typora中叫<code>文章名</code>的文章后，图片会自动变为<code>![](文章名/image.jpg)</code>。</p>
+<p>但我们知道部署后，文件路径是不同的，所以当我们插入完所有的图片后，我们还需要删除每个图片路径中的<code>文件名/</code>。不慌，也很简单。</p>
+<p>在Typora编辑器中，使用<code>&lt;C-f&gt;</code>快捷键，将所有的<code>文章名/</code>替换为空即可删除。</p>
+<p><img src="C:\Users\76946\Desktop\blog\source_posts\hexo-next-blog搭建及使用\among-us-3840x2160-artwork-4k-23114.jpg" alt="among-us-3840x2160-artwork-4k-23114"></p>
+]]></content>
   </entry>
 </search>
