@@ -34,7 +34,7 @@
       </tags>
   </entry>
   <entry>
-    <title></title>
+    <title>神经网络与深度学习-note</title>
     <url>/2021/01/19/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E4%B8%8E%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-note/</url>
     <content><![CDATA[<p><img src="/2021/01/19/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E4%B8%8E%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-note/image-20210120081213727.png" alt="image-20210120081213727"></p>
 <p>记录Michael Nielsen 的《神经网络与深度学习》学习过程。</p>
@@ -109,6 +109,12 @@
 <li>输入感知器：可以完全不将其看作感知器，而是简单的定义为输出期望值的特殊单元。</li>
 </ul>
 <h2 id="S型神经元"><a href="#S型神经元" class="headerlink" title="S型神经元"></a>S型神经元</h2><h1 id="反向传播算法如何工作"><a href="#反向传播算法如何工作" class="headerlink" title="反向传播算法如何工作"></a>反向传播算法如何工作</h1><h1 id="改进神经网络的学习方法"><a href="#改进神经网络的学习方法" class="headerlink" title="改进神经网络的学习方法"></a>改进神经网络的学习方法</h1><h1 id="神经网络可以计算任何函数的可视化证明"><a href="#神经网络可以计算任何函数的可视化证明" class="headerlink" title="神经网络可以计算任何函数的可视化证明"></a>神经网络可以计算任何函数的可视化证明</h1><h1 id="深度神经网络为何很难训练"><a href="#深度神经网络为何很难训练" class="headerlink" title="深度神经网络为何很难训练"></a>深度神经网络为何很难训练</h1><h1 id="深度学习"><a href="#深度学习" class="headerlink" title="深度学习"></a>深度学习</h1>]]></content>
+      <categories>
+        <category>神经网络</category>
+      </categories>
+      <tags>
+        <tag>神经网络</tag>
+      </tags>
   </entry>
   <entry>
     <title>markdown语法</title>
