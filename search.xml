@@ -17,23 +17,6 @@
 ]]></content>
   </entry>
   <entry>
-    <title>神经网络</title>
-    <url>/2021/01/19/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/</url>
-    <content><![CDATA[<p>safasdfja;sldjfa;sldkfja</p>
-<p>saldfjalsdfhasdhfasd;fhasdf</p>
-<p>falsdfaklsjdhfasdklhfla</p>
-<p>falsdfhalskdfhalsdkjfhaskldfha</p>
-<a id="more"></a>
-
-<h1 id="第一章"><a href="#第一章" class="headerlink" title="第一章"></a>第一章</h1><h1 id="第二章"><a href="#第二章" class="headerlink" title="第二章"></a>第二章</h1>]]></content>
-      <categories>
-        <category>神经网络</category>
-      </categories>
-      <tags>
-        <tag>神经网络</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>神经网络与深度学习-note</title>
     <url>/2021/01/19/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E4%B8%8E%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-note/</url>
     <content><![CDATA[<p><img src="/2021/01/19/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E4%B8%8E%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-note/image-20210120081213727.png" alt="image-20210120081213727"></p>
@@ -164,8 +147,9 @@
 <li>网络的输入层包含给输入像素的值进行编码的神经元 ，含有784=28*28个神经元。输入像素是灰度级的，值为1.0表示黑色，值为0.0表示白色，中间数值表示逐渐暗淡的灰色。</li>
 <li>网络的隐藏层用n来表示神经元的数量。</li>
 <li>网络的输出层包含10个神经元。如果第一个神经元激活，即其输出近似为1，那么表明 网络认为数字是一个0。更确切地说，我们把神经元的输出赋予编号0到9，并计算哪个神经元有最高的激活值。</li>
+<li>思考：为什么使用10个输出神经元而不是4个。2^4=16&gt;10完全可以表示10个数字。</li>
 </ul>
-<h1 id="反向传播算法如何工作"><a href="#反向传播算法如何工作" class="headerlink" title="反向传播算法如何工作"></a>反向传播算法如何工作</h1><h1 id="改进神经网络的学习方法"><a href="#改进神经网络的学习方法" class="headerlink" title="改进神经网络的学习方法"></a>改进神经网络的学习方法</h1><h1 id="神经网络可以计算任何函数的可视化证明"><a href="#神经网络可以计算任何函数的可视化证明" class="headerlink" title="神经网络可以计算任何函数的可视化证明"></a>神经网络可以计算任何函数的可视化证明</h1><h1 id="深度神经网络为何很难训练"><a href="#深度神经网络为何很难训练" class="headerlink" title="深度神经网络为何很难训练"></a>深度神经网络为何很难训练</h1><h1 id="深度学习"><a href="#深度学习" class="headerlink" title="深度学习"></a>深度学习</h1>]]></content>
+<h2 id="使用梯度下降算法进行学习"><a href="#使用梯度下降算法进行学习" class="headerlink" title="使用梯度下降算法进行学习"></a>使用梯度下降算法进行学习</h2><h1 id="反向传播算法如何工作"><a href="#反向传播算法如何工作" class="headerlink" title="反向传播算法如何工作"></a>反向传播算法如何工作</h1><h1 id="改进神经网络的学习方法"><a href="#改进神经网络的学习方法" class="headerlink" title="改进神经网络的学习方法"></a>改进神经网络的学习方法</h1><h1 id="神经网络可以计算任何函数的可视化证明"><a href="#神经网络可以计算任何函数的可视化证明" class="headerlink" title="神经网络可以计算任何函数的可视化证明"></a>神经网络可以计算任何函数的可视化证明</h1><h1 id="深度神经网络为何很难训练"><a href="#深度神经网络为何很难训练" class="headerlink" title="深度神经网络为何很难训练"></a>深度神经网络为何很难训练</h1><h1 id="深度学习"><a href="#深度学习" class="headerlink" title="深度学习"></a>深度学习</h1>]]></content>
       <categories>
         <category>神经网络</category>
       </categories>

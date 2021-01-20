@@ -49,7 +49,7 @@
 <meta property="og:image" content="http://example.com/2021/01/19/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E4%B8%8E%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-note/image-20210120194421991.png">
 <meta property="og:image" content="http://example.com/2021/01/19/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E4%B8%8E%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-note/image-20210120194325646.png">
 <meta property="article:published_time" content="2021-01-19T12:30:40.000Z">
-<meta property="article:modified_time" content="2021-01-20T12:30:54.799Z">
+<meta property="article:modified_time" content="2021-01-20T12:40:20.789Z">
 <meta property="article:author" content="Jiahui Wang">
 <meta property="article:tag" content="神经网络">
 <meta name="twitter:card" content="summary">
@@ -183,7 +183,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E8%AF%86%E5%88%AB%E6%89%8B%E5%86%99%E6%95%B0%E5%AD%97"><span class="nav-number">1.</span> <span class="nav-text">使用神经网络识别手写数字</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%84%9F%E7%9F%A5%E5%99%A8"><span class="nav-number">1.1.</span> <span class="nav-text">感知器</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%84%9F%E7%9F%A5%E5%99%A8%E7%9A%84%E5%AE%9A%E4%B9%89"><span class="nav-number">1.1.1.</span> <span class="nav-text">感知器的定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AE%80%E5%8C%96%E6%84%9F%E7%9F%A5%E5%99%A8%E7%9A%84%E6%95%B0%E5%AD%A6%E6%8F%8F%E8%BF%B0"><span class="nav-number">1.1.2.</span> <span class="nav-text">简化感知器的数学描述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%84%9F%E7%9F%A5%E5%99%A8%E7%BD%91%E7%BB%9C"><span class="nav-number">1.1.3.</span> <span class="nav-text">感知器网络</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%84%9F%E7%9F%A5%E5%99%A8%E8%AE%A1%E7%AE%97%E5%9F%BA%E6%9C%AC%E9%80%BB%E8%BE%91%E7%9A%84%E5%8A%9F%E8%83%BD"><span class="nav-number">1.1.4.</span> <span class="nav-text">感知器计算基本逻辑的功能</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#S%E5%9E%8B%E7%A5%9E%E7%BB%8F%E5%85%83"><span class="nav-number">1.2.</span> <span class="nav-text">S型神经元</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AD%A6%E4%B9%A0%E7%AE%97%E6%B3%95"><span class="nav-number">1.2.1.</span> <span class="nav-text">学习算法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E7%9A%84%E6%9E%B6%E6%9E%84"><span class="nav-number">1.3.</span> <span class="nav-text">神经网络的架构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80%E4%B8%AA%E7%AE%80%E5%8D%95%E7%9A%84%E5%88%86%E7%B1%BB%E6%89%8B%E5%86%99%E6%95%B0%E5%AD%97%E7%9A%84%E7%BD%91%E7%BB%9C"><span class="nav-number">1.4.</span> <span class="nav-text">一个简单的分类手写数字的网络</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8F%8D%E5%90%91%E4%BC%A0%E6%92%AD%E7%AE%97%E6%B3%95%E5%A6%82%E4%BD%95%E5%B7%A5%E4%BD%9C"><span class="nav-number">2.</span> <span class="nav-text">反向传播算法如何工作</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%94%B9%E8%BF%9B%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E7%9A%84%E5%AD%A6%E4%B9%A0%E6%96%B9%E6%B3%95"><span class="nav-number">3.</span> <span class="nav-text">改进神经网络的学习方法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%8F%AF%E4%BB%A5%E8%AE%A1%E7%AE%97%E4%BB%BB%E4%BD%95%E5%87%BD%E6%95%B0%E7%9A%84%E5%8F%AF%E8%A7%86%E5%8C%96%E8%AF%81%E6%98%8E"><span class="nav-number">4.</span> <span class="nav-text">神经网络可以计算任何函数的可视化证明</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%B7%B1%E5%BA%A6%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E4%B8%BA%E4%BD%95%E5%BE%88%E9%9A%BE%E8%AE%AD%E7%BB%83"><span class="nav-number">5.</span> <span class="nav-text">深度神经网络为何很难训练</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0"><span class="nav-number">6.</span> <span class="nav-text">深度学习</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E8%AF%86%E5%88%AB%E6%89%8B%E5%86%99%E6%95%B0%E5%AD%97"><span class="nav-number">1.</span> <span class="nav-text">使用神经网络识别手写数字</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%84%9F%E7%9F%A5%E5%99%A8"><span class="nav-number">1.1.</span> <span class="nav-text">感知器</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%84%9F%E7%9F%A5%E5%99%A8%E7%9A%84%E5%AE%9A%E4%B9%89"><span class="nav-number">1.1.1.</span> <span class="nav-text">感知器的定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AE%80%E5%8C%96%E6%84%9F%E7%9F%A5%E5%99%A8%E7%9A%84%E6%95%B0%E5%AD%A6%E6%8F%8F%E8%BF%B0"><span class="nav-number">1.1.2.</span> <span class="nav-text">简化感知器的数学描述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%84%9F%E7%9F%A5%E5%99%A8%E7%BD%91%E7%BB%9C"><span class="nav-number">1.1.3.</span> <span class="nav-text">感知器网络</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%84%9F%E7%9F%A5%E5%99%A8%E8%AE%A1%E7%AE%97%E5%9F%BA%E6%9C%AC%E9%80%BB%E8%BE%91%E7%9A%84%E5%8A%9F%E8%83%BD"><span class="nav-number">1.1.4.</span> <span class="nav-text">感知器计算基本逻辑的功能</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#S%E5%9E%8B%E7%A5%9E%E7%BB%8F%E5%85%83"><span class="nav-number">1.2.</span> <span class="nav-text">S型神经元</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AD%A6%E4%B9%A0%E7%AE%97%E6%B3%95"><span class="nav-number">1.2.1.</span> <span class="nav-text">学习算法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E7%9A%84%E6%9E%B6%E6%9E%84"><span class="nav-number">1.3.</span> <span class="nav-text">神经网络的架构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80%E4%B8%AA%E7%AE%80%E5%8D%95%E7%9A%84%E5%88%86%E7%B1%BB%E6%89%8B%E5%86%99%E6%95%B0%E5%AD%97%E7%9A%84%E7%BD%91%E7%BB%9C"><span class="nav-number">1.4.</span> <span class="nav-text">一个简单的分类手写数字的网络</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8%E6%A2%AF%E5%BA%A6%E4%B8%8B%E9%99%8D%E7%AE%97%E6%B3%95%E8%BF%9B%E8%A1%8C%E5%AD%A6%E4%B9%A0"><span class="nav-number">1.5.</span> <span class="nav-text">使用梯度下降算法进行学习</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8F%8D%E5%90%91%E4%BC%A0%E6%92%AD%E7%AE%97%E6%B3%95%E5%A6%82%E4%BD%95%E5%B7%A5%E4%BD%9C"><span class="nav-number">2.</span> <span class="nav-text">反向传播算法如何工作</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%94%B9%E8%BF%9B%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E7%9A%84%E5%AD%A6%E4%B9%A0%E6%96%B9%E6%B3%95"><span class="nav-number">3.</span> <span class="nav-text">改进神经网络的学习方法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%8F%AF%E4%BB%A5%E8%AE%A1%E7%AE%97%E4%BB%BB%E4%BD%95%E5%87%BD%E6%95%B0%E7%9A%84%E5%8F%AF%E8%A7%86%E5%8C%96%E8%AF%81%E6%98%8E"><span class="nav-number">4.</span> <span class="nav-text">神经网络可以计算任何函数的可视化证明</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%B7%B1%E5%BA%A6%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E4%B8%BA%E4%BD%95%E5%BE%88%E9%9A%BE%E8%AE%AD%E7%BB%83"><span class="nav-number">5.</span> <span class="nav-text">深度神经网络为何很难训练</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0"><span class="nav-number">6.</span> <span class="nav-text">深度学习</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -199,7 +199,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">5</span>
+          <span class="site-state-item-count">4</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -290,7 +290,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-01-20 20:30:54" itemprop="dateModified" datetime="2021-01-20T20:30:54+08:00">2021-01-20</time>
+        <time title="修改时间：2021-01-20 20:40:20" itemprop="dateModified" datetime="2021-01-20T20:40:20+08:00">2021-01-20</time>
       </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -447,8 +447,9 @@
 <li>网络的输入层包含给输入像素的值进行编码的神经元 ，含有784=28*28个神经元。输入像素是灰度级的，值为1.0表示黑色，值为0.0表示白色，中间数值表示逐渐暗淡的灰色。</li>
 <li>网络的隐藏层用n来表示神经元的数量。</li>
 <li>网络的输出层包含10个神经元。如果第一个神经元激活，即其输出近似为1，那么表明 网络认为数字是一个0。更确切地说，我们把神经元的输出赋予编号0到9，并计算哪个神经元有最高的激活值。</li>
+<li>思考：为什么使用10个输出神经元而不是4个。2^4=16&gt;10完全可以表示10个数字。</li>
 </ul>
-<h1 id="反向传播算法如何工作"><a href="#反向传播算法如何工作" class="headerlink" title="反向传播算法如何工作"></a>反向传播算法如何工作</h1><h1 id="改进神经网络的学习方法"><a href="#改进神经网络的学习方法" class="headerlink" title="改进神经网络的学习方法"></a>改进神经网络的学习方法</h1><h1 id="神经网络可以计算任何函数的可视化证明"><a href="#神经网络可以计算任何函数的可视化证明" class="headerlink" title="神经网络可以计算任何函数的可视化证明"></a>神经网络可以计算任何函数的可视化证明</h1><h1 id="深度神经网络为何很难训练"><a href="#深度神经网络为何很难训练" class="headerlink" title="深度神经网络为何很难训练"></a>深度神经网络为何很难训练</h1><h1 id="深度学习"><a href="#深度学习" class="headerlink" title="深度学习"></a>深度学习</h1>
+<h2 id="使用梯度下降算法进行学习"><a href="#使用梯度下降算法进行学习" class="headerlink" title="使用梯度下降算法进行学习"></a>使用梯度下降算法进行学习</h2><h1 id="反向传播算法如何工作"><a href="#反向传播算法如何工作" class="headerlink" title="反向传播算法如何工作"></a>反向传播算法如何工作</h1><h1 id="改进神经网络的学习方法"><a href="#改进神经网络的学习方法" class="headerlink" title="改进神经网络的学习方法"></a>改进神经网络的学习方法</h1><h1 id="神经网络可以计算任何函数的可视化证明"><a href="#神经网络可以计算任何函数的可视化证明" class="headerlink" title="神经网络可以计算任何函数的可视化证明"></a>神经网络可以计算任何函数的可视化证明</h1><h1 id="深度神经网络为何很难训练"><a href="#深度神经网络为何很难训练" class="headerlink" title="深度神经网络为何很难训练"></a>深度神经网络为何很难训练</h1><h1 id="深度学习"><a href="#深度学习" class="headerlink" title="深度学习"></a>深度学习</h1>
     </div>
 
     
@@ -469,8 +470,8 @@
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/2021/01/19/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/" rel="next" title="神经网络">
-                  神经网络 <i class="fa fa-chevron-right"></i>
+                <a href="/2021/01/19/markdown%E8%AF%AD%E6%B3%95/" rel="next" title="markdown语法">
+                  markdown语法 <i class="fa fa-chevron-right"></i>
                 </a>
             </div>
           </div>
