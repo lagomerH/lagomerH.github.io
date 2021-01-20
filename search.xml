@@ -75,7 +75,40 @@
 </ul>
 <img src="/2021/01/19/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E4%B8%8E%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-note/image-20210120093803752.png" alt="image-20210120093803752" style="zoom: 67%;">
 
-<h1 id="反向传播算法如何工作"><a href="#反向传播算法如何工作" class="headerlink" title="反向传播算法如何工作"></a>反向传播算法如何工作</h1><h1 id="改进神经网络的学习方法"><a href="#改进神经网络的学习方法" class="headerlink" title="改进神经网络的学习方法"></a>改进神经网络的学习方法</h1><h1 id="神经网络可以计算任何函数的可视化证明"><a href="#神经网络可以计算任何函数的可视化证明" class="headerlink" title="神经网络可以计算任何函数的可视化证明"></a>神经网络可以计算任何函数的可视化证明</h1><h1 id="深度神经网络为何很难训练"><a href="#深度神经网络为何很难训练" class="headerlink" title="深度神经网络为何很难训练"></a>深度神经网络为何很难训练</h1><h1 id="深度学习"><a href="#深度学习" class="headerlink" title="深度学习"></a>深度学习</h1>]]></content>
+
+
+<h3 id="感知器计算基本逻辑的功能"><a href="#感知器计算基本逻辑的功能" class="headerlink" title="感知器计算基本逻辑的功能"></a>感知器计算基本逻辑的功能</h3><ul>
+<li><p>运算基础，例如“<strong>与</strong>”，“<strong>或</strong>”和“<strong>与非</strong></p>
+</li>
+<li><p>与非门感知器：输入00产生1，输入11产生0</p>
+</li>
+</ul>
+<p><img src="/2021/01/19/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E4%B8%8E%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-note/image-20210120103347029.png" alt="image-20210120103347029"></p>
+<ul>
+<li>与非门是通用运算，以此为基础我们可以用感知器网络来计算任何逻辑功能</li>
+<li>构建一个电路将两个二进制数相加</li>
+</ul>
+<img src="/2021/01/19/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E4%B8%8E%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-note/image-20210120115000598.png" alt="image-20210120115000598" style="zoom:80%;">
+
+<ul>
+<li>将与非门替换为感知器</li>
+</ul>
+<img src="/2021/01/19/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E4%B8%8E%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-note/image-20210120115226182.png" alt="image-20210120115226182" style="zoom:67%;">
+
+<ul>
+<li>最左边感知器的输出被两次作为底部感知器的输入。进而我们可以简单把两条线合并为到一个权重为-4的连接</li>
+</ul>
+<img src="/2021/01/19/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E4%B8%8E%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-note/image-20210120115424951.png" alt="image-20210120115424951" style="zoom: 67%;">
+
+<ul>
+<li><strong>输入层</strong>：将<code>x1</code> <code>x2</code>这样的感知器网路左边的浮动变量可以画一层额外的感知器来方便输入编码</li>
+</ul>
+<img src="/2021/01/19/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E4%B8%8E%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-note/image-20210120115831884.png" alt="image-20210120115831884" style="zoom:67%;">
+
+<ul>
+<li>输入感知器：可以完全不将其看作感知器，而是简单的定义为输出期望值的特殊单元。</li>
+</ul>
+<h2 id="S型神经元"><a href="#S型神经元" class="headerlink" title="S型神经元"></a>S型神经元</h2><h1 id="反向传播算法如何工作"><a href="#反向传播算法如何工作" class="headerlink" title="反向传播算法如何工作"></a>反向传播算法如何工作</h1><h1 id="改进神经网络的学习方法"><a href="#改进神经网络的学习方法" class="headerlink" title="改进神经网络的学习方法"></a>改进神经网络的学习方法</h1><h1 id="神经网络可以计算任何函数的可视化证明"><a href="#神经网络可以计算任何函数的可视化证明" class="headerlink" title="神经网络可以计算任何函数的可视化证明"></a>神经网络可以计算任何函数的可视化证明</h1><h1 id="深度神经网络为何很难训练"><a href="#深度神经网络为何很难训练" class="headerlink" title="深度神经网络为何很难训练"></a>深度神经网络为何很难训练</h1><h1 id="深度学习"><a href="#深度学习" class="headerlink" title="深度学习"></a>深度学习</h1>]]></content>
   </entry>
   <entry>
     <title>markdown语法</title>
