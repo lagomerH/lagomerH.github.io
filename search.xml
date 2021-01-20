@@ -34,7 +34,7 @@
       </tags>
   </entry>
   <entry>
-    <title>神经网络与深度学习(note)</title>
+    <title></title>
     <url>/2021/01/19/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E4%B8%8E%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-note/</url>
     <content><![CDATA[<p><img src="/2021/01/19/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E4%B8%8E%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-note/image-20210120081213727.png" alt="image-20210120081213727"></p>
 <p>记录Michael Nielsen 的《神经网络与深度学习》学习过程。</p>
@@ -44,7 +44,7 @@
 
 <h1 id="使用神经网络识别手写数字"><a href="#使用神经网络识别手写数字" class="headerlink" title="使用神经网络识别手写数字"></a>使用神经网络识别手写数字</h1><p>识别数字主要思想：获取大量的手写数字，常称作训练样本，然后开发出一个可以从这些训练样本中进行学习的系统。即神经网络使用样本来自动推断出识别手写数字的规则。</p>
 <p>提高准确性：通过增加训练样本的数量，神经网络可以学到更多关于手写数字的知识。</p>
-<h2 id="感知器"><a href="#感知器" class="headerlink" title="感知器"></a>感知器</h2><ul>
+<h2 id="感知器"><a href="#感知器" class="headerlink" title="感知器"></a>感知器</h2><h3 id="感知器的定义"><a href="#感知器的定义" class="headerlink" title="感知器的定义"></a>感知器的定义</h3><ul>
 <li>依据权重来做出决定的设备。</li>
 <li>接收几个二进制输入，产生一个二进制输出</li>
 </ul>
@@ -55,27 +55,27 @@
 <li><p><strong>阈(yu)值</strong>是一个实数，一个神经元的参数。神经元的输出(0 or 1)由分配权重后的总和与阈值的大小关系决定。</p>
 <p><img src="/2021/01/19/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E4%B8%8E%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-note/image-20210120075501785.png"></p>
 </li>
-<li><p>简化感知器的数学描述。</p>
+</ul>
+<h3 id="简化感知器的数学描述"><a href="#简化感知器的数学描述" class="headerlink" title="简化感知器的数学描述"></a>简化感知器的数学描述</h3><ul>
+<li><p>第一个变动是用w和x对应权重和输入的向量的点乘。</p>
 </li>
-<li><p><strong>感知器网络</strong></p>
-<ul>
+<li><p>第二个变动用感知器的偏置b=-threshold代替。</p>
+</li>
+<li><p><strong>偏置</strong>：一种标识让感知器输出1(激活感知器)有多容易的估算。偏置非常大时输出1是很容易的，偏置非常小时输出1则很困难。</p>
+<p><img src="/2021/01/19/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E4%B8%8E%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-note/image-20210120092559889.png"></p>
+</li>
+</ul>
+<h3 id="感知器网络"><a href="#感知器网络" class="headerlink" title="感知器网络"></a>感知器网络</h3><ul>
 <li><p>第一层感知器——通过权衡输入依据做出三个简单决定。</p>
 </li>
 <li><p>第二层感知器——权衡第一层的决策结果并作出决定。以这种方式，二层感知器可以比一层感知器做出更复杂和抽象的决策。</p>
 </li>
 <li><p><strong>一个感知器只有一个输出</strong>，下图箭头仅仅便于说明一个一个感知器的输出被用于多个感知器。</p>
 </li>
-<li></li>
 </ul>
-</li>
-</ul>
+<img src="/2021/01/19/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E4%B8%8E%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-note/image-20210120093803752.png" alt="image-20210120093803752" style="zoom: 67%;">
+
 <h1 id="反向传播算法如何工作"><a href="#反向传播算法如何工作" class="headerlink" title="反向传播算法如何工作"></a>反向传播算法如何工作</h1><h1 id="改进神经网络的学习方法"><a href="#改进神经网络的学习方法" class="headerlink" title="改进神经网络的学习方法"></a>改进神经网络的学习方法</h1><h1 id="神经网络可以计算任何函数的可视化证明"><a href="#神经网络可以计算任何函数的可视化证明" class="headerlink" title="神经网络可以计算任何函数的可视化证明"></a>神经网络可以计算任何函数的可视化证明</h1><h1 id="深度神经网络为何很难训练"><a href="#深度神经网络为何很难训练" class="headerlink" title="深度神经网络为何很难训练"></a>深度神经网络为何很难训练</h1><h1 id="深度学习"><a href="#深度学习" class="headerlink" title="深度学习"></a>深度学习</h1>]]></content>
-      <categories>
-        <category>神经网络</category>
-      </categories>
-      <tags>
-        <tag>-神经网络 -读书笔记</tag>
-      </tags>
   </entry>
   <entry>
     <title>markdown语法</title>
