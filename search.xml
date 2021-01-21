@@ -148,8 +148,29 @@
 <li>网络的隐藏层用n来表示神经元的数量。</li>
 <li>网络的输出层包含10个神经元。如果第一个神经元激活，即其输出近似为1，那么表明 网络认为数字是一个0。更确切地说，我们把神经元的输出赋予编号0到9，并计算哪个神经元有最高的激活值。</li>
 <li>思考：为什么使用10个输出神经元而不是4个。2^4=16&gt;10完全可以表示10个数字。</li>
+<li></li>
 </ul>
-<h2 id="使用梯度下降算法进行学习"><a href="#使用梯度下降算法进行学习" class="headerlink" title="使用梯度下降算法进行学习"></a>使用梯度下降算法进行学习</h2><h1 id="反向传播算法如何工作"><a href="#反向传播算法如何工作" class="headerlink" title="反向传播算法如何工作"></a>反向传播算法如何工作</h1><h1 id="改进神经网络的学习方法"><a href="#改进神经网络的学习方法" class="headerlink" title="改进神经网络的学习方法"></a>改进神经网络的学习方法</h1><h1 id="神经网络可以计算任何函数的可视化证明"><a href="#神经网络可以计算任何函数的可视化证明" class="headerlink" title="神经网络可以计算任何函数的可视化证明"></a>神经网络可以计算任何函数的可视化证明</h1><h1 id="深度神经网络为何很难训练"><a href="#深度神经网络为何很难训练" class="headerlink" title="深度神经网络为何很难训练"></a>深度神经网络为何很难训练</h1><h1 id="深度学习"><a href="#深度学习" class="headerlink" title="深度学习"></a>深度学习</h1>]]></content>
+<h2 id="使用梯度下降算法进行学习"><a href="#使用梯度下降算法进行学习" class="headerlink" title="使用梯度下降算法进行学习"></a>使用梯度下降算法进行学习</h2><ul>
+<li><p>训练数据集：用来学习的数据集。</p>
+</li>
+<li><p><strong>MNIST数据集</strong>：其中包含有数以万计的连带着正确分类器的手写数字的扫描图像。</p>
+<p>我们将使用符号x来表示一个训练输入。为了方便，把每个训练输入x看作一个28*28=784维的向量。我们用y=y(x)表示对应的期望输出，这里的y是一个10维向量。例如有一个“6”的训练图像x，那么y(x) = (0,0,0,0,0,0,1,0,0,0)<sup>T</sup> 则是网络的期望输出。T是转置操作，把一个行向量转化成列向量。</p>
+</li>
+</ul>
+<ul>
+<li><strong>代价 函数</strong>：我们希望有一个算法，能够让我们找到权重和偏置，以至于网络的输出y(x) 能够拟合所有的训练输入x。为了量化我们如何实现这个目标，我们定义了代价函数：</li>
+</ul>
+<img src="/2021/01/19/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E4%B8%8E%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-note/image-20210121195359475.png" alt="image-20210121195359475" style="zoom:80%;">
+
+<ul>
+<li><p><code>w</code>：所有的网络中权重的集合；<code>b</code>：所有的偏置；<code>n</code>：训练输入数据的个数；<code>a</code>：当输入为 x 时输出的向量；符号<code>||v||</code>指的是向量v的模。</p>
+</li>
+<li><p>我们把C称为<strong>二次代价函数</strong> or <strong>均方误差</strong> or <strong>MSE</strong>。</p>
+</li>
+<li><p>该函数是非负的，其值相当小，C(w,b) $\approx$</p>
+</li>
+</ul>
+<h1 id="反向传播算法如何工作"><a href="#反向传播算法如何工作" class="headerlink" title="反向传播算法如何工作"></a>反向传播算法如何工作</h1><h1 id="改进神经网络的学习方法"><a href="#改进神经网络的学习方法" class="headerlink" title="改进神经网络的学习方法"></a>改进神经网络的学习方法</h1><h1 id="神经网络可以计算任何函数的可视化证明"><a href="#神经网络可以计算任何函数的可视化证明" class="headerlink" title="神经网络可以计算任何函数的可视化证明"></a>神经网络可以计算任何函数的可视化证明</h1><h1 id="深度神经网络为何很难训练"><a href="#深度神经网络为何很难训练" class="headerlink" title="深度神经网络为何很难训练"></a>深度神经网络为何很难训练</h1><h1 id="深度学习"><a href="#深度学习" class="headerlink" title="深度学习"></a>深度学习</h1>]]></content>
       <categories>
         <category>神经网络</category>
       </categories>
@@ -181,6 +202,10 @@
 <h1 id="markdown-段落"><a href="#markdown-段落" class="headerlink" title="markdown 段落"></a>markdown 段落</h1><h2 id="删除线"><a href="#删除线" class="headerlink" title="删除线"></a>删除线</h2><p>在文本的两端加上两条波浪线即可**~~**,实例如下：</p>
 <p><code>~~hello,world~~</code></p>
 <p><del>hello,world</del></p>
+<h2 id="角标"><a href="#角标" class="headerlink" title="角标"></a>角标</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">H&lt;sub&gt;2&lt;&#x2F;sub&gt;O  CO&lt;sub&gt;2&lt;&#x2F;sub&gt;</span><br><span class="line">爆米&lt;sup&gt;TM&lt;&#x2F;sup&gt;</span><br></pre></td></tr></table></figure>
+<p>效果：</p>
+<p>H<sub>2</sub>O  CO<sub>2</sub></p>
+<p>爆米<sup>TM</sup></p>
 ]]></content>
   </entry>
   <entry>
