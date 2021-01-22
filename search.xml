@@ -167,7 +167,7 @@
 </li>
 <li><p>我们把C称为<strong>二次代价函数</strong> or <strong>均方误差</strong> or <strong>MSE</strong>。</p>
 </li>
-<li><p>该函数是非负的，其值相当小，C(w,b) $\approx$</p>
+<li><p>该函数是非负的，其值相当小，C(w,b) $\approx$ 1 </p>
 </li>
 </ul>
 <h1 id="反向传播算法如何工作"><a href="#反向传播算法如何工作" class="headerlink" title="反向传播算法如何工作"></a>反向传播算法如何工作</h1><h1 id="改进神经网络的学习方法"><a href="#改进神经网络的学习方法" class="headerlink" title="改进神经网络的学习方法"></a>改进神经网络的学习方法</h1><h1 id="神经网络可以计算任何函数的可视化证明"><a href="#神经网络可以计算任何函数的可视化证明" class="headerlink" title="神经网络可以计算任何函数的可视化证明"></a>神经网络可以计算任何函数的可视化证明</h1><h1 id="深度神经网络为何很难训练"><a href="#深度神经网络为何很难训练" class="headerlink" title="深度神经网络为何很难训练"></a>深度神经网络为何很难训练</h1><h1 id="深度学习"><a href="#深度学习" class="headerlink" title="深度学习"></a>深度学习</h1>]]></content>
@@ -206,6 +206,15 @@
 <p>效果：</p>
 <p>H<sub>2</sub>O  CO<sub>2</sub></p>
 <p>爆米<sup>TM</sup></p>
+<h1 id="markdown-特殊字符"><a href="#markdown-特殊字符" class="headerlink" title="markdown 特殊字符"></a>markdown 特殊字符</h1><h2 id="行内添加数学公式"><a href="#行内添加数学公式" class="headerlink" title="行内添加数学公式"></a>行内添加数学公式</h2><p>在文本行内添加数学公式需要开启<strong>内联公式</strong>。</p>
+<p><code>文件-&gt;偏好设置-&gt;Markdown</code>中将内联公式勾选。</p>
+<p><code>$\approx$</code>              $\approx$</p>
+<h2 id="插入数学公式"><a href="#插入数学公式" class="headerlink" title="插入数学公式"></a>插入数学公式</h2><p>键入<code>$$</code> 后 <code>Enter</code> 即可。<br>$$</p>
+<p>$$</p>
+<h2 id="附录：Latex数学符号常用表"><a href="#附录：Latex数学符号常用表" class="headerlink" title="附录：Latex数学符号常用表"></a>附录：Latex数学符号常用表</h2><p><img src="/2021/01/19/markdown%E8%AF%AD%E6%B3%95/20190703164359871.png" alt="img"></p>
+<p><img src="/2021/01/19/markdown%E8%AF%AD%E6%B3%95/20190703164424334.png" alt="6"></p>
+<p><img src="/2021/01/19/markdown%E8%AF%AD%E6%B3%95/20190703164439850.png" alt="7-9"></p>
+<p><img src="/2021/01/19/markdown%E8%AF%AD%E6%B3%95/20190703164500390.png" alt="10-13"></p>
 ]]></content>
   </entry>
   <entry>
