@@ -20,7 +20,7 @@
     <title>神经网络与深度学习-note</title>
     <url>/2021/01/19/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E4%B8%8E%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-note/</url>
     <content><![CDATA[<p><img src="/2021/01/19/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E4%B8%8E%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-note/image-20210120081213727.png" alt="image-20210120081213727"></p>
-<p>记录Michael Nielsen 的《神经网络与深度学习》学习过程。</p>
+<p><em>记录Michael Nielsen 的《神经网络与深度学习》学习过程。</em></p>
 <a id="more"></a>
 <h1 id="使用神经网络识别手写数字"><a href="#使用神经网络识别手写数字" class="headerlink" title="使用神经网络识别手写数字"></a>使用神经网络识别手写数字</h1><p>识别数字主要思想：获取大量的手写数字，常称作训练样本，然后开发出一个可以从这些训练样本中进行学习的系统。即神经网络使用样本来自动推断出识别手写数字的规则。</p>
 <p>提高准确性：通过增加训练样本的数量，神经网络可以学到更多关于手写数字的知识。</p>
@@ -283,7 +283,7 @@ v \rightarrow v' = v-\eta \bigtriangledown C</script><ul>
   <entry>
     <title>python学习记录</title>
     <url>/2021/01/21/python%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/</url>
-    <content><![CDATA[<p>记录python的学习过程。</p>
+    <content><![CDATA[<p><em>记录python的学习过程。</em></p>
 <a id="more"></a>
 <h1 id="Python3-环境搭建"><a href="#Python3-环境搭建" class="headerlink" title="Python3 环境搭建"></a>Python3 环境搭建</h1><h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><h2 id="环境变量配置"><a href="#环境变量配置" class="headerlink" title="环境变量配置"></a>环境变量配置</h2><h2 id="运行python"><a href="#运行python" class="headerlink" title="运行python"></a>运行python</h2><h1 id="Python基本语法"><a href="#Python基本语法" class="headerlink" title="Python基本语法"></a>Python基本语法</h1><h2 id="标识符"><a href="#标识符" class="headerlink" title="标识符"></a>标识符</h2><ul>
 <li>字母或下划线(_)开头</li>
