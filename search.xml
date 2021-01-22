@@ -209,25 +209,23 @@ v \rightarrow v' = v-\eta \bigtriangledown C</script><ul>
   <entry>
     <title>markdown语法</title>
     <url>/2021/01/19/markdown%E8%AF%AD%E6%B3%95/</url>
-    <content><![CDATA[<h1 id="markdown-代码"><a href="#markdown-代码" class="headerlink" title="markdown 代码"></a>markdown 代码</h1><ul>
-<li><strong>代码</strong> 使用**反引号`**效果如下：</li>
+    <content><![CDATA[<p><em>markdown的使用指南及问题解决</em></p>
+<a id="more"></a>
+<h1 id="markdown-代码"><a href="#markdown-代码" class="headerlink" title="markdown 代码"></a>markdown 代码</h1><ul>
+<li><strong>代码</strong> 使用<strong>反引号`</strong>效果如下：</li>
 </ul>
 <p><code>hello world</code></p>
 <ul>
 <li><strong>代码区块</strong>使用<strong>4个空格 or 制表符Tab</strong>，效果如下：</li>
 </ul>
 <ul>
-<li><strong>代码区块</strong>还使用**```**包裹一段代码，实例如下：</li>
+<li><strong>代码区块</strong>还使用<strong>```</strong>包裹一段代码，实例如下：</li>
 </ul>
 <p>code:</p>
 <figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">​<span class="string">``</span><span class="string">`javascript</span></span><br><span class="line"><span class="string">$(document).ready(function () &#123;</span></span><br><span class="line"><span class="string">    alert(&#x27;RUNOOB&#x27;);</span></span><br><span class="line"><span class="string">&#125;);</span></span><br><span class="line"><span class="string">​`</span><span class="string">``</span></span><br></pre></td></tr></table></figure>
 <p>效果：</p>
 <figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$(<span class="built_in">document</span>).ready(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    alert(<span class="string">&#x27;RUNOOB&#x27;</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-
-
-
-
-<h1 id="markdown-段落"><a href="#markdown-段落" class="headerlink" title="markdown 段落"></a>markdown 段落</h1><h2 id="删除线"><a href="#删除线" class="headerlink" title="删除线"></a>删除线</h2><p>在文本的两端加上两条波浪线即可**~~**,实例如下：</p>
+<h1 id="markdown-段落"><a href="#markdown-段落" class="headerlink" title="markdown 段落"></a>markdown 段落</h1><h2 id="删除线"><a href="#删除线" class="headerlink" title="删除线"></a>删除线</h2><p>在文本的两端加上两条波浪线即可<strong>~~</strong>,实例如下：</p>
 <p><code>~~hello,world~~</code></p>
 <p><del>hello,world</del></p>
 <h2 id="角标"><a href="#角标" class="headerlink" title="角标"></a>角标</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">H&lt;sub&gt;2&lt;&#x2F;sub&gt;O  CO&lt;sub&gt;2&lt;&#x2F;sub&gt;</span><br><span class="line">爆米&lt;sup&gt;TM&lt;&#x2F;sup&gt;</span><br></pre></td></tr></table></figure>
@@ -236,13 +234,19 @@ v \rightarrow v' = v-\eta \bigtriangledown C</script><ul>
 <p>爆米<sup>TM</sup></p>
 <h1 id="markdown-特殊字符"><a href="#markdown-特殊字符" class="headerlink" title="markdown 特殊字符"></a>markdown 特殊字符</h1><h2 id="行内添加数学公式"><a href="#行内添加数学公式" class="headerlink" title="行内添加数学公式"></a>行内添加数学公式</h2><p>在文本行内添加数学公式需要开启<strong>内联公式</strong>。</p>
 <p><code>文件-&gt;偏好设置-&gt;Markdown</code>中将内联公式勾选。</p>
-<p><code>$\approx$</code>              $\approx$</p>
-<h2 id="插入数学公式"><a href="#插入数学公式" class="headerlink" title="插入数学公式"></a>插入数学公式</h2><p>键入<code>$$</code> 后 <code>Enter</code> 即可。<br>$$</p>
-<p>$$</p>
+<script type="math/tex; mode=display">\approx$$              $\approx$
+
+
+
+
+
+## 插入数学公式
+
+键入$$$$ 后 `Enter` 即可。</script><p>$$</p>
 <h2 id="附录：Latex数学符号常用表"><a href="#附录：Latex数学符号常用表" class="headerlink" title="附录：Latex数学符号常用表"></a>附录：Latex数学符号常用表</h2><ul>
-<li>上标 <br> <code>$a^2$</code>    -&gt;   $a^2$<br> <code>$a^&#123;222&#125;$</code>   -&gt;   $a^{222}$  </li>
-<li>下标 <br> <code>$A_&#123;b_&#123;c&#125;&#125;$</code>   -&gt;   $A_{b_{C}}$ </li>
-<li>前角标<br> <code>$&#123;^1_2&#125;A&#123;^3_4&#125;$</code>   -&gt;   ${^1_2}A{^3_4}$</li>
+<li>上标 <br> <script type="math/tex">a^2</script>    -&gt;   $a^2$<br> <script type="math/tex">a^{222}</script>   -&gt;   $a^{222}$  </li>
+<li>下标 <br> <script type="math/tex">A_{b_{c}}</script>   -&gt;   $A_{b_{C}}$ </li>
+<li>前角标<br> <script type="math/tex">{^1_2}A{^3_4}</script>   -&gt;   ${^1_2}A{^3_4}$</li>
 </ul>
 <p><img src="/2021/01/19/markdown%E8%AF%AD%E6%B3%95/20190703164359871.png" alt="img"></p>
 <p><img src="/2021/01/19/markdown%E8%AF%AD%E6%B3%95/20190703164424334.png" alt="6"></p>
@@ -279,27 +283,25 @@ v \rightarrow v' = v-\eta \bigtriangledown C</script><ul>
   <entry>
     <title>python学习记录</title>
     <url>/2021/01/21/python%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/</url>
-    <content><![CDATA[<h1 id="Python3-环境搭建"><a href="#Python3-环境搭建" class="headerlink" title="Python3 环境搭建"></a>Python3 环境搭建</h1><h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><h2 id="环境变量配置"><a href="#环境变量配置" class="headerlink" title="环境变量配置"></a>环境变量配置</h2><h2 id="运行python"><a href="#运行python" class="headerlink" title="运行python"></a>运行python</h2><h1 id="Python基本语法"><a href="#Python基本语法" class="headerlink" title="Python基本语法"></a>Python基本语法</h1><h2 id="标识符"><a href="#标识符" class="headerlink" title="标识符"></a>标识符</h2><ul>
+    <content><![CDATA[<p>记录python的学习过程。</p>
+<a id="more"></a>
+<h1 id="Python3-环境搭建"><a href="#Python3-环境搭建" class="headerlink" title="Python3 环境搭建"></a>Python3 环境搭建</h1><h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><h2 id="环境变量配置"><a href="#环境变量配置" class="headerlink" title="环境变量配置"></a>环境变量配置</h2><h2 id="运行python"><a href="#运行python" class="headerlink" title="运行python"></a>运行python</h2><h1 id="Python基本语法"><a href="#Python基本语法" class="headerlink" title="Python基本语法"></a>Python基本语法</h1><h2 id="标识符"><a href="#标识符" class="headerlink" title="标识符"></a>标识符</h2><ul>
 <li>字母或下划线(_)开头</li>
 <li>字母下划线数字组成</li>
 <li>对大小写敏感</li>
 <li>在PYthon3中可以用中文作为变量名，非ASCII码也是允许的</li>
 </ul>
 <h2 id="保留字"><a href="#保留字" class="headerlink" title="保留字"></a>保留字</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">import</span> keyword</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>keyword.kwlist</span><br><span class="line">[<span class="string">&#x27;False&#x27;</span>, <span class="string">&#x27;None&#x27;</span>, <span class="string">&#x27;True&#x27;</span>, <span class="string">&#x27;and&#x27;</span>, <span class="string">&#x27;as&#x27;</span>, <span class="string">&#x27;assert&#x27;</span>, <span class="string">&#x27;break&#x27;</span>, <span class="string">&#x27;class&#x27;</span>, <span class="string">&#x27;continue&#x27;</span>, <span class="string">&#x27;def&#x27;</span>, <span class="string">&#x27;del&#x27;</span>, <span class="string">&#x27;elif&#x27;</span>, <span class="string">&#x27;else&#x27;</span>, <span class="string">&#x27;except&#x27;</span>, <span class="string">&#x27;finally&#x27;</span>, <span class="string">&#x27;for&#x27;</span>, <span class="string">&#x27;from&#x27;</span>, <span class="string">&#x27;global&#x27;</span>, <span class="string">&#x27;if&#x27;</span>, <span class="string">&#x27;import&#x27;</span>, <span class="string">&#x27;in&#x27;</span>, <span class="string">&#x27;is&#x27;</span>, <span class="string">&#x27;lambda&#x27;</span>, <span class="string">&#x27;nonlocal&#x27;</span>, <span class="string">&#x27;not&#x27;</span>, <span class="string">&#x27;or&#x27;</span>, <span class="string">&#x27;pass&#x27;</span>, <span class="string">&#x27;raise&#x27;</span>, <span class="string">&#x27;return&#x27;</span>, <span class="string">&#x27;try&#x27;</span>, <span class="string">&#x27;while&#x27;</span>, <span class="string">&#x27;with&#x27;</span>, <span class="string">&#x27;yield&#x27;</span>]</span><br></pre></td></tr></table></figure>
-
-
 <h2 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h2><ul>
-<li>单行注释以**#**开头</li>
+<li>单行注释以<strong>#</strong>开头</li>
 </ul>
 <ul>
-<li>多行注释可以使用多个**#<strong>号，或者用</strong>```<strong>和</strong>“””**包裹</li>
+<li>多行注释可以使用多个<strong>#</strong>号，或者用<strong>```</strong>和<strong>“””</strong>包裹</li>
 </ul>
 <h2 id="行与缩进"><a href="#行与缩进" class="headerlink" title="行与缩进"></a>行与缩进</h2><p>python最具特色的就是<strong>缩进来表示代码块，而不是使用大括号</strong><code>&#123;&#125;</code></p>
 <p>所进的空格数是可变的，但是<strong>同一个代码块的语句必须包含相同的空格数</strong></p>
 <h2 id="多行语句"><a href="#多行语句" class="headerlink" title="多行语句"></a>多行语句</h2><p>python通常是一行写完一条语句，但是如果语句过长我们可以<strong>使用反斜杠()来实现多行语句</strong></p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line">total = item_one + \</span><br><span class="line">        item_two + \</span><br><span class="line">        item_three</span><br></pre></td></tr></table></figure>
-
-
 <p><strong>在[],{},()中的多行语句不需要使用</strong></p>
 <h2 id="空行"><a href="#空行" class="headerlink" title="空行"></a>空行</h2><p>函数之间或类的方法之间用空行分隔，表示一段新的代码的开始。类和函数入口之间也用一行空行分隔，以突出函数入口的开始。</p>
 <p>空行与代码缩进不同，空行并不是Python语法的一部分。书写时不插入空行，Python解释器运行也不会出错。但是空行的作用在于分隔两段不同功能或含义的代码，便于日后代码的维护或重构。</p>
