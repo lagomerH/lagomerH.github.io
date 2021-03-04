@@ -340,4 +340,163 @@ v \rightarrow v' = v-\eta \bigtriangledown C</script><ul>
         <tag>python</tag>
       </tags>
   </entry>
+  <entry>
+    <title>Java与Android移动应用开发</title>
+    <url>/2021/03/03/Java%E4%B8%8EAndroid%E7%A7%BB%E5%8A%A8%E5%BA%94%E7%94%A8%E5%BC%80%E5%8F%91/</url>
+    <content><![CDATA[<p><em>java学习之路——勇往直前吧！</em></p>
+<a id="more"></a>
+<h1 id="Java开发基础"><a href="#Java开发基础" class="headerlink" title="Java开发基础"></a>Java开发基础</h1><h2 id="语句和语句块"><a href="#语句和语句块" class="headerlink" title="语句和语句块"></a>语句和语句块</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> firstdemo;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">FirstDemo</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		System.out.println(<span class="string">&quot;HelloJava&quot;</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><strong>package</strong>语句：代码定义在哪个包中，结尾要有<strong>;</strong> </li>
+<li><strong>import</strong>语句：引用其他包中的资源</li>
+<li><strong>public</strong>和<strong>class</strong>关键字：定义一个类，使用 <strong>{}</strong> 定义类的主体部分，称为代码块</li>
+<li><strong>main()</strong>：类中可能会包含很多成员，main()方法是程序执行的入口，其主体同样用 <strong>{}</strong> 定义</li>
+<li><strong>System.out.println()方法</strong>：输出一些内容</li>
+</ul>
+<h2 id="注释内容"><a href="#注释内容" class="headerlink" title="注释内容"></a>注释内容</h2><p>Java中，有四种注释方法：</p>
+<p><strong>行注释</strong></p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">//注释内容</span></span><br><span class="line">System.out.println(<span class="string">&quot;HelloJava&quot;</span>);  <span class="comment">//注释内容</span></span><br></pre></td></tr></table></figure>
+<p><strong>块注释</strong></p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">内容</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
+<p><strong>块注释中使用@</strong></p>
+<p>用@符号表示的指令，可以通过javadoc命令创建HTML文档。</p>
+<p><strong>文档注释</strong></p>
+<p><code>/**      */</code></p>
+<h2 id="保留字标识符"><a href="#保留字标识符" class="headerlink" title="保留字标识符"></a>保留字标识符</h2><p><strong>标识符规范</strong>：可以使用字母、下划线、$符号和数字等，但是第一个字符不能为数字。</p>
+<h2 id="基本数据类型"><a href="#基本数据类型" class="headerlink" title="基本数据类型"></a>基本数据类型</h2><p><strong>最终变量（常量）</strong>：在其类型前使用<strong>final</strong>关键字。</p>
+<p><strong>定义规范</strong>：同时定义多个相同类型变量时可以使用<code>,</code>分隔，并可以分别赋值。</p>
+<p><strong>不同类型的数据之间进行运算</strong>：</p>
+<ul>
+<li>基本类型之间转化：除boolean自动进行转换：<code>byte,short,char – int–long–float–double</code>。即表述范围小的可以自动转化为表述范围大的。</li>
+<li>基本类型和String：基本类型与String之间的运算，会转换成String类型。</li>
+</ul>
+<p><strong>byte类型数据是有符号的</strong>，当数据为负数时，其二进制实际上是其绝对值的补码形式，。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">byte</span> x = <span class="number">0b00000010</span>;</span><br><span class="line">System.out.println(~x);  </span><br><span class="line"><span class="comment">//-3, 0b11111101</span></span><br><span class="line"><span class="comment">//整数3的8位二进制形式为00000011</span></span><br><span class="line"><span class="comment">//补码的计算是按位取反后加1</span></span><br><span class="line"><span class="comment">//3的补码为11111100+1=11111101</span></span><br><span class="line"><span class="comment">//故0b11111101表示-3</span></span><br></pre></td></tr></table></figure>
+<h3 id="整数"><a href="#整数" class="headerlink" title="整数"></a>整数</h3><h4 id="进制"><a href="#进制" class="headerlink" title="进制"></a>进制</h4><p>默认为十进制，但也可以使用其他进制。</p>
+<ul>
+<li>0开头的定义为八进制，<code>020</code>表示十进制数16.</li>
+<li>0x开头定义为十六进制，<code>0xf</code>表示十进制数15。</li>
+<li>0b开头定义为二进制，<code>0b0101</code>表示十进制数5。</li>
+</ul>
+<h4 id="算数运算"><a href="#算数运算" class="headerlink" title="算数运算"></a>算数运算</h4><ul>
+<li>可以使用：+、-、*、/和%运算符。</li>
+<li><p>整数运算的结果仍为整数，<strong>如果运算数的类型不一样，则统一转化为取值范围较大的类型，然后进行计算</strong>。</p>
+</li>
+<li><p>整数的除法和取余运算如果右运算数为0会产生错误。</p>
+</li>
+</ul>
+<h4 id="增量与减量运算"><a href="#增量与减量运算" class="headerlink" title="增量与减量运算"></a>增量与减量运算</h4><p>对于前增量和后增量操作，如果只需要使用变量运算后的值则他们是一样的；但是在使用运算表达式的值时，则有区别。</p>
+<h4 id="位运算"><a href="#位运算" class="headerlink" title="位运算"></a>位运算</h4><h5 id="逻辑位运算"><a href="#逻辑位运算" class="headerlink" title="逻辑位运算"></a>逻辑位运算</h5><p>对操作数的二进制位进行逻辑运算。</p>
+<ul>
+<li><p><strong>&amp;</strong>：与运算，当两个二进制位数据都为1时返回1，否则为0</p>
+</li>
+<li><p><strong>|</strong>：或运算，当两个二进制位数据都为0时返回0，否则为1</p>
+</li>
+<li><strong>~</strong>：取反运算，二进制数据为1时返回0，为0时返回1</li>
+<li><strong>^</strong>：异或运算，当两个二进制位数据相同时返回0，不同时返回1</li>
+</ul>
+<p>在实际开发工作中，逻辑位运算经常进行一些标识数据的比较工作。</p>
+<h5 id="位移运算"><a href="#位移运算" class="headerlink" title="位移运算"></a>位移运算</h5><ul>
+<li><strong>&lt;&lt;</strong>：位左移运算，二进制位会向左移动，低位补0。<strong>当整数x进行左移n位运算时，就是在执行：x * (2 ^ n)</strong>。如果左移运算超出类型支持的位数，超出部分会丢失，即数据溢出。</li>
+<li><strong>&gt;&gt;</strong>：位右移运算，二进制位会向右移动，<strong>符号位不动，右移空出的高位要补上与符号位相同的数据，执行x / (2 ^ n)</strong>。</li>
+<li><strong>&gt;&gt;&gt;</strong>：无符号右移运算，使用时不考虑符号位，整体右移且高位补0。</li>
+</ul>
+<h3 id="浮点数"><a href="#浮点数" class="headerlink" title="浮点数"></a>浮点数</h3><p>浮点数指可以处理小数部分的数据类型。</p>
+<p>支持运算：算术运算和增量减量，但不能进行位运算。</p>
+<ul>
+<li><strong>double双精度浮点数</strong>：64位。含有小数部分的数据默认类型为double。如果需要明确指出数据是double类型，可以使用d或D后缀。</li>
+<li><strong>float单精度浮点数</strong>：32位。使用f或F后缀。</li>
+</ul>
+<h2 id="类型转换"><a href="#类型转换" class="headerlink" title="类型转换"></a>类型转换</h2><h3 id="隐式转换"><a href="#隐式转换" class="headerlink" title="隐式转换"></a>隐式转换</h3><p>把一个取值范围小的类型转化为取值范围大的类型。</p>
+<p>不同数据类型进行运算时会进行隐形转换。</p>
+<h3 id="非隐式转换"><a href="#非隐式转换" class="headerlink" title="非隐式转换"></a>非隐式转换</h3><p>把一个取值范围大的类型转化为取值范围小的类型。</p>
+<p>这是不能被正确执行的，如果确实需要这种转换操作，就必须进行强制转换。在需要转换的数据前使用<code>()</code>指定目标类型。当数据超出目标类型的取值范围，会进行截断操作，数据内容会发生改变。浮点数转化为整数时会丢失小数部分。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">long</span> x = <span class="number">100</span>;</span><br><span class="line"><span class="keyword">int</span> y = (<span class="keyword">int</span>) x;</span><br></pre></td></tr></table></figure>
+<p> char类型</p>
+<p>用于处理Unicode字符。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">char</span> ch = <span class="string">&#x27;A&#x27;</span>;</span><br><span class="line">System.out.println(ch);  <span class="comment">//A</span></span><br><span class="line">System.out.println( (<span class="keyword">int</span>) ch ); <span class="comment">//65 A的ASCII码</span></span><br><span class="line">System.out.println((<span class="keyword">char</span>) <span class="number">65</span>);  <span class="comment">//A</span></span><br></pre></td></tr></table></figure>
+<p>Java代码文件完全支持Unicode字符，也就是说可以使用中文来作为变量名。</p>
+<p><strong>转义字符</strong></p>
+<ul>
+<li><code>\n</code></li>
+<li><code>\r</code></li>
+<li><code>\f</code></li>
+<li><code>\b</code></li>
+<li><code>\t</code></li>
+<li><code>\\</code></li>
+<li><code>\&quot;</code></li>
+<li><code>\&#39;</code></li>
+<li><code>\uxxx</code></li>
+</ul>
+<h2 id="bioolean类型"><a href="#bioolean类型" class="headerlink" title="bioolean类型"></a>bioolean类型</h2><p>布尔类型或逻辑型</p>
+<ul>
+<li>&amp;&amp;</li>
+<li>||</li>
+<li>!</li>
+</ul>
+<h2 id="枚举类型"><a href="#枚举类型" class="headerlink" title="枚举类型"></a>枚举类型</h2><p>枚举是一种自定义的数据类型，其中定义了可用的数据（枚举值）</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">enum</span> <span class="title">ESex</span> </span>&#123;unknow, male, female&#125;;</span><br><span class="line"><span class="comment">//enum关键字后指定枚举类型的名称。枚举成员定义在&#123;&#125;中，用逗号分隔</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">( String[] args)</span> </span>&#123;</span><br><span class="line">    ESex sex = ESex.male;</span><br><span class="line">    System.out.println(sex); <span class="comment">//male</span></span><br><span class="line">    System.out.println(sex.ordinal());  <span class="comment">//1</span></span><br><span class="line">    System.out.println(ESex.values()[<span class="number">2</span>]); <span class="comment">//female</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>枚举类型的本质：每个成员都会有一个整数索引值，第一个成员的索引值位0，以此类推。当枚举类型和整数类型进行转换时，实际上就是在成员索引值和成员名称之间进行转换。</p>
+<h2 id="代码的组织和应用程序的基本结构"><a href="#代码的组织和应用程序的基本结构" class="headerlink" title="代码的组织和应用程序的基本结构"></a>代码的组织和应用程序的基本结构</h2><p>每一个发布项目都应该有一个唯一的包（package）名。</p>
+<p>习惯的方法：反向域名+应用名</p>
+<p>由一个或多个类组成，其中必须有一个定义了main()方法。</p>
+<p>程序的源代码结构<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">package</span><br><span class="line">import</span><br><span class="line">---------------</span><br><span class="line">class 类1&#123;</span><br><span class="line">    ----------</span><br><span class="line">    方法</span><br><span class="line">    ----------</span><br><span class="line">    变量</span><br><span class="line">    ----------</span><br><span class="line">&#125;</span><br><span class="line">class 类2&#123;</span><br><span class="line">    ..........</span><br><span class="line">&#125;</span><br><span class="line">..............</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li>每个源文件中只能有一个类或接口是公共的</li>
+<li>编译后每个类产生一个.class文件</li>
+<li>包是每个java系统用来组织类的组织</li>
+<li>编程只能在方法中进行</li>
+</ul>
+<h1 id="面向对象编程-OPP"><a href="#面向对象编程-OPP" class="headerlink" title="面向对象编程 OPP"></a>面向对象编程 OPP</h1><p>面向对象编程就是将一系列数据及其操作进行封装，让数据更直观、代码维护更高效。</p>
+<h2 id="类和对象"><a href="#类和对象" class="headerlink" title="类和对象"></a>类和对象</h2><p>类（class）是一种更加复杂的数据类型，它主要包括两种成员<strong>字段(field)</strong> 和 <strong>方法(method)</strong>。字段用来存储数据，方法则定义数据的一些列操作。</p>
+<h3 id="类的定义"><a href="#类的定义" class="headerlink" title="类的定义"></a>类的定义</h3><h4 id="类的定义语法"><a href="#类的定义语法" class="headerlink" title="类的定义语法"></a>类的定义语法</h4><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> firstdemo;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">CAuto</span> </span>&#123;</span><br><span class="line"><span class="comment">//[类的修饰符] class 类名</span></span><br><span class="line">  <span class="comment">//[extends 父类名] 仅可以继承一个父类</span></span><br><span class="line">  <span class="comment">//[implments 接口名] 可以有多个接口</span></span><br><span class="line">    <span class="keyword">public</span> String model = <span class="string">&quot; &quot;</span>;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">int</span> doors = <span class="number">4</span>;</span><br><span class="line">  <span class="comment">//成员变量定义</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">moveTO</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> y)</span> </span>&#123;</span><br><span class="line">        String s = String.format(<span class="string">&quot;%s 移动到 (%d, %d)&quot;</span>, model,x,y);</span><br><span class="line">        System.out.println(s);</span><br><span class="line">    &#125;</span><br><span class="line">  <span class="comment">//方法定义</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>model字段，表示车的型号，定义为String类型，默认为空字符串。</li>
+<li>doors字段，表示车门的数量，定义为int类型，默认为4。</li>
+<li>moveTO()方法，用于显示车的移动信息。</li>
+<li>String.format()方法，将各种类型的数据组合为字符串类型。</li>
+<li>类修饰符：<ul>
+<li>public:允许其他类访问，一个源文件仅可以有一个public类。</li>
+<li>abstract：没有实例的抽象类。</li>
+<li>final：不能再被拓展，不能有子类；易于安全的实现。<h4 id="类的成员变量的声明"><a href="#类的成员变量的声明" class="headerlink" title="类的成员变量的声明"></a>类的成员变量的声明</h4><code>[public|protected|private] [static|] [final] [transient] [volatile]</code><br><strong>static</strong>：类成员变量，对所有的实例一致<br><strong>final</strong>：数值不变常量，定义同时需要进行初始化<br><strong>transient</strong>：暂时性变量，用于对象存档<br><strong>volatile</strong>：易变变量，用于并发线程共享</li>
+</ul>
+</li>
+</ul>
+<h4 id="类的方法声明"><a href="#类的方法声明" class="headerlink" title="类的方法声明"></a>类的方法声明</h4><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">[<span class="keyword">public</span>|<span class="keyword">protected</span>|<span class="keyword">private</span>] [<span class="keyword">static</span>|] [<span class="keyword">final</span>] [<span class="keyword">abstract</span>] [<span class="keyword">native</span>] [<span class="keyword">synchronized</span>] 返回类型 方法名 (参数列表)</span><br><span class="line">[ <span class="keyword">throws</span> 例外名]</span><br><span class="line">&#123;</span><br><span class="line">    方法体；</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>static:静态方法，在方法体中只能使用静态方法和静态变量</li>
+</ul>
+<h3 id="类的使用"><a href="#类的使用" class="headerlink" title="类的使用"></a>类的使用</h3><ul>
+<li><p>定义此类型的“变量”：<code>CAuto auto</code><br>auto称为类的一个<strong>实例（instance）或者CAuto类型的对象</strong>，简称为auto对象。此时auto对象暂时还不能使用，因为它还没有实例化，其值默认为null。</p>
+</li>
+<li><p>对象的实例化：<code>CAuto auto = new CAuto();</code><br>实例化一个对象需要使用<strong>new</strong>关键字。</p>
+</li>
+<li><p>应用</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">auto.model = <span class="string">&quot;x9&quot;</span>;</span><br><span class="line">auto.moveTo(<span class="number">10</span>, <span class="number">10</span>);</span><br></pre></td></tr></table></figure>
+<p>代码中，<strong>圆点运算符（.）</strong>用来调用对象的字段和方法。</p>
+</li>
+</ul>
+<h3 id="构造函数和对象释放"><a href="#构造函数和对象释放" class="headerlink" title="构造函数和对象释放"></a>构造函数和对象释放</h3><p><code>CAuto auto = new CAuto();</code><br>代码中<code>CAuto()</code>是方法，为CAuto类的构造函数。类在创建时会包含一个空的构造函数。</p>
+<p>构造函数看上去和方法差不多，但是他的名称与类相同，而且不需要定义返回值类型。一个类可以定义多个构造函数，<strong>只要它们的参数设置能够有效区分就可以</strong>。</p>
+<p><strong>构造函数链</strong>：减少重复代码，提高维护效率<br><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">//构造函数1</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="title">CAuto</span><span class="params">(String m, <span class="keyword">int</span> d)</span> </span>&#123;</span><br><span class="line">    model = m;</span><br><span class="line">    doors = d;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//构造函数2</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="title">CAuto</span><span class="params">(String m)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">this</span>(m, <span class="number">4</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//构造函数3</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="title">CAuto</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">this</span>(<span class="string">&quot;&quot;</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><br><strong>this</strong>：此关键字指当前实例。当运行构造函数2时会调用当前实例的构造函数1，同理运行构造函数3时会调用构造函数2进而调用构造函数1。<br><strong>super</strong>：对父类构造方法的调用</p>
+<p><strong>对象释放</strong>：Java运行环境可以自动回收不再使用的对象，大多数情况下不需要开发者编写代码进行处理。但是当对象中使用了一些外部资源时，就应该保证这些资源能够正确地关闭。</p>
+<h3 id="getter-和setter-方法"><a href="#getter-和setter-方法" class="headerlink" title="getter()和setter()方法"></a>getter()和setter()方法</h3><p>用这两种方法控制字段数据的读取和设置操作。对私有成员变量访问和修改的方法。</p>
+<h2 id="类的继承"><a href="#类的继承" class="headerlink" title="类的继承"></a>类的继承</h2><ul>
+<li>创建类时指明它为某存在类的子类:<code>extends 超类/父类名</code></li>
+<li>父类：<ul>
+<li>来自系统</li>
+<li>用户自定义</li>
+</ul>
+</li>
+<li></li>
+</ul>
+<h1 id="流程控制"><a href="#流程控制" class="headerlink" title="流程控制"></a>流程控制</h1><h2 id="循环语句"><a href="#循环语句" class="headerlink" title="循环语句"></a>循环语句</h2><h3 id="for语句"><a href="#for语句" class="headerlink" title="for语句"></a>for语句</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span>(初始条件; 执行条件; 循环控制变量循环后变化)&#123;</span><br><span class="line">    代码块</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<h3 id="while语句"><a href="#while语句" class="headerlink" title="while语句"></a>while语句</h3>]]></content>
+      <categories>
+        <category>JAVA</category>
+      </categories>
+      <tags>
+        <tag>JAVA</tag>
+      </tags>
+  </entry>
 </search>
