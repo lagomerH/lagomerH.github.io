@@ -530,12 +530,44 @@ v \rightarrow v' = v-\eta \bigtriangledown C</script><ul>
 </thead>
 <tbody>
 <tr>
-<td style="text-align:center"></td>
+<td style="text-align:center">byte</td>
+<td style="text-align:center">java.lang.Byte</td>
+</tr>
+<tr>
+<td style="text-align:center">byte</td>
+<td style="text-align:center">java.lang.Byte</td>
+</tr>
+<tr>
+<td style="text-align:center">short</td>
+<td style="text-align:center">java.lang.Short</td>
+</tr>
+<tr>
+<td style="text-align:center">int</td>
+<td style="text-align:center">java.lang.Integer</td>
+</tr>
+<tr>
+<td style="text-align:center">long</td>
+<td style="text-align:center">java.lang.Long</td>
+</tr>
+<tr>
+<td style="text-align:center">float</td>
+<td style="text-align:center">java.lang.Float</td>
+</tr>
+<tr>
+<td style="text-align:center">double</td>
+<td style="text-align:center">java.lang.Double</td>
+</tr>
+<tr>
+<td style="text-align:center">char</td>
+<td style="text-align:center">java.lang.Char</td>
+</tr>
+<tr>
+<td style="text-align:center">boolean</td>
+<td style="text-align:center">java.lang.Boolean</td>
 </tr>
 </tbody>
 </table>
 </div>
-<p>byte|java.lang.Byte<br>short|java.lang.Short<br>int|java.lang.Integer<br>long|java.lang.Long<br>float|java.lang.Float<br>double|java.lang.Double<br>char|java.lang.Char<br>boolean|java.lang.Boolean</p>
 <p>当基本数据类型需要面向对象操作时可以将其转化为对象来使用</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">    Integer objx = <span class="keyword">new</span> Integer(<span class="number">10</span>);</span><br><span class="line">    System.out.println(objx.toString());</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>使用Integer类的构造函数代入一个整数，从而创建一个值为10的Integer对象。然后，通过toString()方法显示其内容。、</p>
