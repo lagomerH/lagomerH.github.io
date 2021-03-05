@@ -575,7 +575,19 @@ v \rightarrow v' = v-\eta \bigtriangledown C</script><ul>
 <p>这里，直接将整数赋值给Integer类型的objx，编译器会自动完成转换工作。</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">    Integer objx = <span class="number">10</span>;</span><br><span class="line">    System.out.println(objx.intValue());     <span class="comment">//10</span></span><br><span class="line">    System.out.println(objx.floatValue());;  <span class="comment">//10.0</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>intValue()和floatValue()方法可以将objx对象中的数据转化为整数和浮点数。</p>
-<h3 id="数据的传递"><a href="#数据的传递" class="headerlink" title="数据的传递"></a>数据的传递</h3><h1 id="流程控制"><a href="#流程控制" class="headerlink" title="流程控制"></a>流程控制</h1><h2 id="循环语句"><a href="#循环语句" class="headerlink" title="循环语句"></a>循环语句</h2><h3 id="for语句"><a href="#for语句" class="headerlink" title="for语句"></a>for语句</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span>(初始条件; 执行条件; 循环控制变量循环后变化)&#123;</span><br><span class="line">    代码块</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<h3 id="数据的传递"><a href="#数据的传递" class="headerlink" title="数据的传递"></a>数据的传递</h3><p>基本数据类型称为值类型，而所有的类称为引用类型。</p>
+<ul>
+<li>值类型的参数在传递过程中会产生一个副本，其本身不会改变。</li>
+<li>引用类型在传递时会传递其对象位于内存中的位置，作为参数时自身可能会发生改变。</li>
+<li>String类型，引用类型中的异类。其用于处理不可变字符串类型，即String对象的内容一旦确定就不能改变，对于字符串内容的任何操作，都会生成一个新的字符串对象。</li>
+</ul>
+<h3 id="类型的动态处理"><a href="#类型的动态处理" class="headerlink" title="类型的动态处理"></a>类型的动态处理</h3><p>Object类的常用成员：</p>
+<ul>
+<li><strong>eauals()</strong>：与参数指定的对象进行比较，当两个对象是同一引用时返回true。</li>
+<li><strong>toString()</strong>：返回对象的文本描述。</li>
+<li><strong>getClass()</strong>：返回一个Class类型的对象，即对象类型的描述对象。</li>
+</ul>
+<h1 id="流程控制"><a href="#流程控制" class="headerlink" title="流程控制"></a>流程控制</h1><h2 id="循环语句"><a href="#循环语句" class="headerlink" title="循环语句"></a>循环语句</h2><h3 id="for语句"><a href="#for语句" class="headerlink" title="for语句"></a>for语句</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span>(初始条件; 执行条件; 循环控制变量循环后变化)&#123;</span><br><span class="line">    代码块</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
 <h3 id="while语句"><a href="#while语句" class="headerlink" title="while语句"></a>while语句</h3>]]></content>
       <categories>
         <category>JAVA</category>
@@ -583,5 +595,15 @@ v \rightarrow v' = v-\eta \bigtriangledown C</script><ul>
       <tags>
         <tag>JAVA</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>蓝桥杯</title>
+    <url>/2021/03/05/%E8%93%9D%E6%A1%A5%E6%9D%AF/</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
+    <title>vscode使用指南</title>
+    <url>/2021/03/05/vscode%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/</url>
+    <content><![CDATA[]]></content>
   </entry>
 </search>
