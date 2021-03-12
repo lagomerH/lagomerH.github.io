@@ -828,7 +828,12 @@ v \rightarrow v' = v-\eta \bigtriangledown C</script><ul>
   <entry>
     <title>基于CNN+BiSLTM+CTC的智能发票识别系统</title>
     <url>/2021/03/12/%E5%9F%BA%E4%BA%8ECNN-BiSLTM-CTC%E7%9A%84%E6%99%BA%E8%83%BD%E5%8F%91%E7%A5%A8%E8%AF%86%E5%88%AB%E7%B3%BB%E7%BB%9F/</url>
-    <content><![CDATA[]]></content>
+    <content><![CDATA[<a id="more"></a>
+<h1 id="CNN-卷积神经网络"><a href="#CNN-卷积神经网络" class="headerlink" title="CNN 卷积神经网络"></a>CNN 卷积神经网络</h1><h2 id="概览"><a href="#概览" class="headerlink" title="概览"></a>概览</h2><h3 id="卷积神经网络"><a href="#卷积神经网络" class="headerlink" title="卷积神经网络"></a>卷积神经网络</h3><p><strong>Convolutional Neural Network</strong> 是一种前馈神经网络，它的神经元可以响应一部分覆盖范围内的周围单元，对于大型图像处理有出色的表现。</p>
+<p>与普通神经网络非常相似，他们都具有可学习的权重和偏置常量(biases)的神经元组成。每个神经元都接受一些输入，并做一些点积计算，输出是每个分类的分数，普通神经网络里的一些计算技巧在这里依然适用。</p>
+<p><strong>不同的是</strong>：卷积神经网络输入的是图像，可以让我们把特定的性质编码入网络结构，使我们的前馈函数更加有效率，并减少了大量参数。</p>
+<h3 id="具有三维体积的神经元-3D-volumes-of-neurons"><a href="#具有三维体积的神经元-3D-volumes-of-neurons" class="headerlink" title="具有三维体积的神经元 (3D volumes of neurons)"></a>具有三维体积的神经元 (3D volumes of neurons)</h3><p>卷积神经网络利用输入是图片的特点，将神经元设计成三个维度：<strong>width</strong>, <strong>height</strong>, <strong>depth</strong>(注意：这里的depth不是指神经元的深度，而是用来描述神经元的)。比如输入的大小是32x32x3(rgb)，那么输入的神经元也就具有32x32x3的维度。   </p>
+<h1 id="BiSLTM"><a href="#BiSLTM" class="headerlink" title="BiSLTM"></a>BiSLTM</h1><h1 id="CTC"><a href="#CTC" class="headerlink" title="CTC"></a>CTC</h1>]]></content>
       <tags>
         <tag>神经网络</tag>
       </tags>
