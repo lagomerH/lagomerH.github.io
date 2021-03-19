@@ -818,6 +818,43 @@ v \rightarrow v' = v-\eta \bigtriangledown C</script><ul>
 <li><p>阶梯三角形<br>这种代码填空题要先弄明白每个变量的含义，不能先入为主</p>
 </li>
 </ul>
+<h1 id="集训"><a href="#集训" class="headerlink" title="集训"></a>集训</h1><h2 id="历年真题"><a href="#历年真题" class="headerlink" title="历年真题"></a>历年真题</h2><h3 id="2019省赛"><a href="#2019省赛" class="headerlink" title="2019省赛"></a>2019省赛</h3><h4 id="组队"><a href="#组队" class="headerlink" title="组队"></a>组队</h4><ul>
+<li>程序解决<br>因为是五个人组队故可以使用5层for循环解决，中间判断5人不能为同一人。</li>
+</ul>
+<h1 id="算法篇"><a href="#算法篇" class="headerlink" title="算法篇"></a>算法篇</h1><h2 id="树和二叉树"><a href="#树和二叉树" class="headerlink" title="树和二叉树"></a>树和二叉树</h2><p><strong>二叉树的递归定义</strong>：二叉树要么为空，要么由 root 、left subtree 、right subtree 组成，而左右子树分别又是一棵二叉树，计算机中树一般倒置。</p>
+<p><strong>树</strong>：；树和二叉树类似，区别在于每个结点不一定只有两棵子树。</p>
+<h3 id="二叉树编号"><a href="#二叉树编号" class="headerlink" title="二叉树编号"></a>二叉树编号</h3><ul>
+<li>对于每一个结点k，其左子节点和右子节点的编号分别为是2k和2k+1。</li>
+<li>给定一棵包含$2^d$个节点(d为树的高度)的完全二叉树，从1开始编号，d层的首个节点为$2^{d-1}$，末尾节点为$2^{d}-1$</li>
+</ul>
+<h3 id="二叉树的遍历"><a href="#二叉树的遍历" class="headerlink" title="二叉树的遍历"></a>二叉树的遍历</h3><h4 id="二叉树宽度优先遍历-bfs"><a href="#二叉树宽度优先遍历-bfs" class="headerlink" title="二叉树宽度优先遍历 bfs"></a>二叉树宽度优先遍历 bfs</h4><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">//节点类型</span></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Node</span> &#123;</span></span><br><span class="line">    <span class="keyword">bool</span> have_value;</span><br><span class="line">    <span class="keyword">int</span> v;</span><br><span class="line">    Node *left, *right;</span><br><span class="line">    Node():have_value(<span class="literal">false</span>), left(<span class="literal">NULL</span>), right(<span class="literal">NULL</span>)&#123;&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>按照层次顺序遍历这棵树。此处使用队列，初始时只用一个根节点，然后每次取出一个父节点，就把他的左右子节点放入队列中。</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">bfs</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; ans)</span></span>&#123;</span><br><span class="line"><span class="built_in">queue</span>&lt;Node*&gt; q;</span><br><span class="line">ans.clear();</span><br><span class="line">q.push(root); <span class="comment">//初始时只有一个根结点</span></span><br><span class="line"><span class="keyword">while</span>(!q.empty())&#123;</span><br><span class="line">Node* u = q.front(); q.pop();</span><br><span class="line"><span class="keyword">if</span>(!u-&gt;have_value) <span class="keyword">return</span> <span class="literal">false</span>; <span class="comment">//有结点没有被赋值过，表明输入有误</span></span><br><span class="line">ans.push_back(u-&gt;v); <span class="comment">//增加到输出序列尾部</span></span><br><span class="line"><span class="keyword">if</span>(u-&gt;left != <span class="literal">NULL</span>) q.push(u-&gt;left); <span class="comment">//把左子结点（如果有）放进队列</span></span><br><span class="line"><span class="keyword">if</span>(u-&gt;right != <span class="literal">NULL</span>) q.push(u-&gt;right); <span class="comment">//把右子结点（如果有）放进队列</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">return</span> <span class="literal">true</span>; <span class="comment">//输入正确</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="二叉树的深度优先遍历-dfs"><a href="#二叉树的深度优先遍历-dfs" class="headerlink" title="二叉树的深度优先遍历 dfs"></a>二叉树的深度优先遍历 dfs</h4><h2 id="图"><a href="#图" class="headerlink" title="图"></a>图</h2><p>Graph 描述的是一些个体之间的关系。与线性表和二叉树不同的是：这些个体之间既不是前驱后继的顺序关系，也不是祖先后代的层次关系，而是错综复杂的网状关系。</p>
+<h3 id="用-bfs-求最短路径"><a href="#用-bfs-求最短路径" class="headerlink" title="用 bfs 求最短路径"></a>用 bfs 求最短路径</h3><p>按层遍历，每增加一层意味着增加一步，故第一次遍历到目的节点的层数为代表的步数为最短路径。</p>
+<ul>
+<li>迷宫问题</li>
+</ul>
+<p><img src="/2021/03/05/%E8%93%9D%E6%A1%A5%E6%9D%AF/image-20210319105542812.png" alt="image-20210319105542812"></p>
+<p><img src="/2021/03/05/%E8%93%9D%E6%A1%A5%E6%9D%AF/image-20210319111251977.png" alt="image-20210319111251977"><br>使用bfs求出图的最短路之后，可以用递归方式打印最短的具体路径。如果路径非常长，递归可能会引起栈溢出，此时可以改用循环，用vector保存路径。</p>
+<h2 id="波兰表达式"><a href="#波兰表达式" class="headerlink" title="波兰表达式"></a>波兰表达式</h2><h3 id="计算"><a href="#计算" class="headerlink" title="计算"></a>计算</h3><ul>
+<li>逆波兰表达式的计算</li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">//计算逆波兰表达式的值即后缀表达式的值可以使用栈进行计算</span></span><br><span class="line"><span class="comment">//原理:向栈中push数字当遇到计算符号时pop最上层两个数字进行计算后push</span></span><br><span class="line"><span class="built_in">string</span> s = <span class="string">&quot;123+-&quot;</span>;</span><br><span class="line"><span class="built_in">stack</span>&lt;<span class="keyword">int</span>&gt; ss；</span><br><span class="line"><span class="keyword">int</span> x, y;</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; s.length; i++) &#123;</span><br><span class="line">    <span class="keyword">if</span>(!(s[i] &gt;= <span class="string">&#x27;0&#x27;</span>  &amp;&amp; s[i] &lt;= <span class="string">&#x27;9&#x27;</span>)) &#123;</span><br><span class="line">        y = ss.top();  <span class="comment">//注意：先弹出的为后操作数</span></span><br><span class="line">        ss.pop();</span><br><span class="line">        x = ss.top();</span><br><span class="line">        ss.pop();     <span class="comment">//注意：两个操作数都要pop</span></span><br><span class="line">        <span class="keyword">if</span>(s[i] == <span class="string">&#x27;+&#x27;</span>)</span><br><span class="line">            ss.push(x + y);</span><br><span class="line">        <span class="keyword">if</span>*(s[i] == <span class="string">&#x27;-&#x27;</span>)</span><br><span class="line">            ss.push(x - y);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span>&#123;</span><br><span class="line">        ss.push(s[i] - <span class="string">&#x27;0&#x27;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">cout</span> &lt;&lt; ss.yop() &lt;&lt; <span class="built_in">endl</span>;</span><br></pre></td></tr></table></figure>
+<h3 id="调度场算法"><a href="#调度场算法" class="headerlink" title="调度场算法"></a>调度场算法</h3><p>为了把较难处理的中缀表达式转化为容易处理的后缀表达式，引入调度场算法。<br>中缀表达式之所以难处理本质上因为优先级。如果我们把所有表达式全部按优先级加上括号，就很容易按照递归进行计算，但是这并不好实现。<br>因此我们换一种思路用栈来解决问题。</p>
+<p><strong>使用栈的原因</strong>：当我们读到<code>a + b</code>的时候并不知道后面是什么，我们需要暂缓一步，等有了足够的信息再将其放出来。<br>足够的信息：假设<strong>乘方</strong>是优先级最高的运算，当我们读到<code>a ^ b</code>时无论后面是什么操作都可以立刻将其变为<code>a b ^</code>，但是当我们遇到其他计算就要考虑后面的计算符号，若是低于他的则可放心进行计算。</p>
+<p><strong>归纳</strong>：栈顶的运算符被弹出的条件是<strong>优先级不低于新读入的运算符</strong>。当表达式结束时，也要把栈里剩余的运算符依次弹出。</p>
+<p><strong>算法</strong>：</p>
+<ol>
+<li>读到数字：直接输出</li>
+<li>读到运算符：如果栈顶的运算符优先级不低于(大于等于)该运算符，则输出栈顶的运算符并使之出栈，直到栈空或不满足上述条件为止；然后入栈。</li>
+<li>当读入完毕时，依次输出并弹出栈顶运算符，直到栈被清空。</li>
+</ol>
+<p><img src="/2021/03/05/%E8%93%9D%E6%A1%A5%E6%9D%AF/v2-5d60fe34ae244a296cd3562617facea7_r.png" alt="v2-5d60fe34ae244a296cd3562617facea7_r"></p>
+<p><strong>处理括号</strong>：</p>
+<h2 id="文件处理"><a href="#文件处理" class="headerlink" title="文件处理"></a>文件处理</h2><h3 id="fropen"><a href="#fropen" class="headerlink" title="fropen"></a>fropen</h3><p>头文件 <stdio.h></stdio.h></p>
+<p>fropen(path, mode, stream)</p>
+<p>path:路径<br>mode:文件打开方式”r”-只读， “w”-写<br>stream:stdin-标准输入流,stdout-标准输出流‘</p>
 ]]></content>
   </entry>
   <entry>
