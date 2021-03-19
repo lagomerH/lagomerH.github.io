@@ -854,7 +854,7 @@ v \rightarrow v' = v-\eta \bigtriangledown C</script><ul>
 <p><strong>处理括号</strong>：</p>
 <h2 id="文件处理"><a href="#文件处理" class="headerlink" title="文件处理"></a>文件处理</h2><h3 id="fropen"><a href="#fropen" class="headerlink" title="fropen"></a>fropen</h3><p>头文件 <stdio.h></stdio.h></p>
 <p>fropen(path, mode, stream)</p>
-<p>path:路径<br>mode:文件打开方式”r”-只读， “w”-写<br>stream:stdin-标准输入流,stdout-标准输出流‘</p>
+<p>path:路径<br>mode:文件打开方式”r”-只读， “w”-写<br>stream:stdin-标准输入流,stdout-标准输出流</p>
 ]]></content>
   </entry>
   <entry>
