@@ -5,7 +5,6 @@
     <url>/2021/01/19/hello-world/</url>
     <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
 <a id="more"></a>
-
 <h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
 <p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
 <h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
@@ -17,194 +16,24 @@
 ]]></content>
   </entry>
   <entry>
-    <title>神经网络与深度学习-note</title>
-    <url>/2021/01/19/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E4%B8%8E%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-note/</url>
-    <content><![CDATA[<p><img src="/2021/01/19/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E4%B8%8E%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-note/image-20210120081213727.png" alt="image-20210120081213727"></p>
-<p><em>记录Michael Nielsen 的《神经网络与深度学习》学习过程。</em></p>
+    <title>hexo-next blog搭建及使用</title>
+    <url>/2021/01/19/hexo-next-blog%E6%90%AD%E5%BB%BA%E5%8F%8A%E4%BD%BF%E7%94%A8/</url>
+    <content><![CDATA[<p>hexo-next blog搭建过程及使用过程中的问题及解决方案</p>
 <a id="more"></a>
-<h1 id="使用神经网络识别手写数字"><a href="#使用神经网络识别手写数字" class="headerlink" title="使用神经网络识别手写数字"></a>使用神经网络识别手写数字</h1><p>识别数字主要思想：获取大量的手写数字，常称作训练样本，然后开发出一个可以从这些训练样本中进行学习的系统。即神经网络使用样本来自动推断出识别手写数字的规则。</p>
-<p>提高准确性：通过增加训练样本的数量，神经网络可以学到更多关于手写数字的知识。</p>
-<h2 id="感知器"><a href="#感知器" class="headerlink" title="感知器"></a>感知器</h2><h3 id="感知器的定义"><a href="#感知器的定义" class="headerlink" title="感知器的定义"></a>感知器的定义</h3><ul>
-<li>依据权重来做出决定的设备。</li>
-<li>接收几个二进制输入，产生一个二进制输出</li>
-</ul>
-<p><img src="/2021/01/19/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E4%B8%8E%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-note/image-20210120074657848.png" alt="image-20210120074657848"></p>
-<ul>
-<li><p>引入<strong>权重</strong>规则，用其表示相应输入对于输出的重要性。</p>
-</li>
-<li><p><strong>阈(yu)值</strong>是一个实数，一个神经元的参数。神经元的输出(0 or 1)由分配权重后的总和与阈值的大小关系决定。</p>
-<p><img src="/2021/01/19/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E4%B8%8E%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-note/image-20210120075501785.png" alt></p>
-</li>
-</ul>
-<h3 id="简化感知器的数学描述"><a href="#简化感知器的数学描述" class="headerlink" title="简化感知器的数学描述"></a>简化感知器的数学描述</h3><ul>
-<li><p>第一个变动是用w和x对应权重和输入的向量的点乘。</p>
-</li>
-<li><p>第二个变动用感知器的偏置b=-threshold代替。</p>
-</li>
-<li><p><strong>偏置</strong>：一种标识让感知器输出1(激活感知器)有多容易的估算。偏置非常大时输出1是很容易的，偏置非常小时输出1则很困难。</p>
-<p><img src="/2021/01/19/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E4%B8%8E%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-note/image-20210120092559889.png" alt></p>
-</li>
-</ul>
-<h3 id="感知器网络"><a href="#感知器网络" class="headerlink" title="感知器网络"></a>感知器网络</h3><ul>
-<li><p>第一层感知器——通过权衡输入依据做出三个简单决定。</p>
-</li>
-<li><p>第二层感知器——权衡第一层的决策结果并作出决定。以这种方式，二层感知器可以比一层感知器做出更复杂和抽象的决策。</p>
-</li>
-<li><strong>一个感知器只有一个输出</strong>，下图箭头仅仅便于说明一个一个感知器的输出被用于多个感知器。</li>
-</ul>
-<p><img src="/2021/01/19/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E4%B8%8E%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-note/image-20210120093803752.png" alt="image-20210120093803752" style="zoom: 67%;"></p>
-<h3 id="感知器计算基本逻辑的功能"><a href="#感知器计算基本逻辑的功能" class="headerlink" title="感知器计算基本逻辑的功能"></a>感知器计算基本逻辑的功能</h3><ul>
-<li><p>运算基础，例如“<strong>与</strong>”，“<strong>或</strong>”和“<strong>与非</strong></p>
-</li>
-<li><p>与非门感知器：输入00产生1，输入11产生0</p>
-</li>
-</ul>
-<p><img src="/2021/01/19/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E4%B8%8E%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-note/image-20210120103347029.png" alt="image-20210120103347029"></p>
-<ul>
-<li>与非门是通用运算，以此为基础我们可以用感知器网络来计算任何逻辑功能</li>
-<li>构建一个电路将两个二进制数相加</li>
-</ul>
-<p><img src="/2021/01/19/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E4%B8%8E%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-note/image-20210120115000598.png" alt="image-20210120115000598" style="zoom:80%;"></p>
-<ul>
-<li>将与非门替换为感知器</li>
-</ul>
-<p><img src="/2021/01/19/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E4%B8%8E%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-note/image-20210120115226182.png" alt="image-20210120115226182" style="zoom:67%;"></p>
-<ul>
-<li>最左边感知器的输出被两次作为底部感知器的输入。进而我们可以简单把两条线合并为到一个权重为-4的连接</li>
-</ul>
-<p><img src="/2021/01/19/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E4%B8%8E%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-note/image-20210120115424951.png" alt="image-20210120115424951" style="zoom: 67%;"></p>
-<ul>
-<li><strong>输入层</strong>：将<code>x1</code> <code>x2</code>这样的感知器网路左边的浮动变量可以画一层额外的感知器来方便输入编码</li>
-</ul>
-<p><img src="/2021/01/19/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E4%B8%8E%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-note/image-20210120115831884.png" alt="image-20210120115831884" style="zoom:67%;"></p>
-<ul>
-<li>输入感知器：可以完全不将其看作感知器，而是简单的定义为输出期望值的特殊单元。</li>
-</ul>
-<h2 id="S型神经元"><a href="#S型神经元" class="headerlink" title="S型神经元"></a>S型神经元</h2><h3 id="学习算法"><a href="#学习算法" class="headerlink" title="学习算法"></a>学习算法</h3><p>自动调节人工神经元的权重和偏置</p>
-<ul>
-<li>学习过程：如果对权重(or 偏置)的微小的改动能够仅仅引起输出的微小变化，那么我们可以利用这一事实来修改权重和偏置，让我们的网络表现得像我们想要的那样。假设网络误将一个”9“识别为”8“。我们能够计算出对权重和偏置的微小改动，使网络将其正确识别。我们重复这个工作，反复修改权重和偏置来产生更好的输出。</li>
-<li>问题：网络中单个感知器的权重或偏置的微小改动有时候会引起那个感知器的输出完全翻转，如0变到1。这样的翻转可能接下来引起其余网路的行为以极其复杂的方式完全改变。虽然”9“可能别正确分类，网络在其他图像上的行为很可能以一些很难控制的方式被完全改变。这使得逐步修改权重和偏置来让网络接近期望行为变得困难。</li>
-</ul>
-<p><img src="/2021/01/19/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E4%B8%8E%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-note/image-20210120173437965.png" alt="image-20210120173437965" style="zoom:80%;"></p>
-<ul>
-<li><p>解决方案：引入一种称为S型神经元的新的人工神经元来克服这个问题。S型神经元和感知器类似，但是被修改为权重和偏置的微小改动只引起输出的微小变化(这对于让神经元网络学习起来是很关键的)。</p>
-</li>
-<li><p><strong>S型神经元</strong>：有多个输入，这些输入可以取[0,1]中的任意值，而不仅仅是0和1。具有权重和偏置。但输出不是0或者1，而是<code>sigma(w·x+b)</code>,该函数为S型函数(逻辑函数)，定义为：</p>
-</li>
-</ul>
-<p>  <img src="/2021/01/19/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E4%B8%8E%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-note/image-20210120180707163.png" alt="image-20210120180707163"></p>
-<p>  代入神经元参数为：</p>
-<p>  <img src="/2021/01/19/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E4%B8%8E%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-note/image-20210120180751519.png" alt="image-20210120180751519"></p>
-<ul>
-<li>S型神经元和感知器关系：当<code>z=w·x+b</code>取很大或者很小时其S型神经元的行为和感知器非常近似。只有<code>z</code>取中间值时与感知模型有较大的偏离。</li>
-</ul>
-<p><img src="/2021/01/19/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E4%B8%8E%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-note/image-20210120181846815.png" alt="image-20210120181846815" style="zoom:67%;"></p>
-<p><img src="/2021/01/19/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E4%B8%8E%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-note/image-20210120182011643.png" alt="image-20210120182011643" style="zoom:67%;"></p>
-<ul>
-<li>如果<code>sigma</code>函数是个阶跃函数，那么S型神经元将会成为一个感知器。之所以利用<code>sigma</code>函数是为了得到一个平滑的感知器。其<strong>平滑特性</strong>正是解决问题的关键因素，意味着权重和偏置的微小变化会从神经元产生一个微小的输出变化，利用微积分我们可以得到下式：</li>
-</ul>
-<p><img src="/2021/01/19/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E4%B8%8E%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-note/image-20210120182810071.png" alt="image-20210120182810071" style="zoom:80%;"></p>
-<ul>
-<li><p>理解:<code>Δoutput</code>是一个反应Δwj和Δb的线性函数，使得选择权重和偏置的微小变化来达到输出的微小变化的运算变得容易。因此，当S型神经元有更多和感知器相同的本质的行为时，计算如何变化权重和偏置来使输出变化会更加容易。</p>
-</li>
-<li><p>为什么选用上面的<code>sigma</code>函数：对于<code>sigma</code>函数重要的是形状而不是精确形式，选用该函数的目的是简化数学计算，因为指数在求导时有些可爱的属性。</p>
-</li>
-<li>S型神经元输出的解释：并非只输出0 or 1，但我们可以设定一个约定来解决这个问题，例如约定任何至少为0.5的输出表示为“这是某个数字”</li>
-</ul>
-<h2 id="神经网络的架构"><a href="#神经网络的架构" class="headerlink" title="神经网络的架构"></a>神经网络的架构</h2><p>假设我们有这样的网络：</p>
-<p><img src="/2021/01/19/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E4%B8%8E%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-note/image-20210120194421991.png" alt="image-20210120194421991" style="zoom:80%;"></p>
-<ul>
-<li><strong>输入层</strong>：网格中最左边的，其中的神经元为<strong>输入神经元</strong>。</li>
-<li><strong>输出层</strong>：最右边的，有且只有一个<strong>输出神经元</strong>。</li>
-<li><strong>隐藏层</strong>：中间包含既不输入也不输出的神经元的层。</li>
-<li><strong>多层感知器</strong> or <strong>MLP</strong>：这种网络尽管是由S型神经元而不是感知器构成，但也称为多层感知器。</li>
-</ul>
-<p>设计输入输出层通常是比较直接的，隐藏层的设计则堪称一门艺术。特别是，通过一些简单的经验法则来总结隐藏层的设计流程是不可行的。相反，神经网络的研究人员已经为隐藏层开发了许多 设计最优法则。</p>
-<ul>
-<li><strong>前馈神经网络</strong>：以上一层的输出作为下一层的输入。这意味着网络中是没有回路 的——信息总是向前传播，从不反向反馈。</li>
-<li>递归神经网络：反馈环路在其中是可行的，其设计思想是具有休眠前会在一段有限时间内保持激活状态的神经元。</li>
-</ul>
-<h2 id="一个简单的分类手写数字的网络"><a href="#一个简单的分类手写数字的网络" class="headerlink" title="一个简单的分类手写数字的网络"></a>一个简单的分类手写数字的网络</h2><p><img src="/2021/01/19/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E4%B8%8E%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-note/image-20210120194325646.png" alt="image-20210120194325646" style="zoom:80%;"></p>
-<ul>
-<li>网络的输入层包含给输入像素的值进行编码的神经元 ，含有784=28*28个神经元。输入像素是灰度级的，值为1.0表示黑色，值为0.0表示白色，中间数值表示逐渐暗淡的灰色。</li>
-<li>网络的隐藏层用n来表示神经元的数量。</li>
-<li>网络的输出层包含10个神经元。如果第一个神经元激活，即其输出近似为1，那么表明 网络认为数字是一个0。更确切地说，我们把神经元的输出赋予编号0到9，并计算哪个神经元有最高的激活值。</li>
-<li>思考：为什么使用10个输出神经元而不是4个。2^4=16&gt;10完全可以表示10个数字。</li>
-<li></li>
-</ul>
-<h2 id="使用梯度下降算法进行学习"><a href="#使用梯度下降算法进行学习" class="headerlink" title="使用梯度下降算法进行学习"></a>使用梯度下降算法进行学习</h2><ul>
-<li><p>训练数据集：用来学习的数据集。</p>
-</li>
-<li><p><strong>MNIST数据集</strong>：其中包含有数以万计的连带着正确分类器的手写数字的扫描图像。</p>
-<p>我们将使用符号x来表示一个训练输入。为了方便，把每个训练输入x看作一个28*28=784维的向量。我们用y=y(x)表示对应的期望输出，这里的y是一个10维向量。例如有一个“6”的训练图像x，那么y(x) = (0,0,0,0,0,0,1,0,0,0)<sup>T</sup> 则是网络的期望输出。T是转置操作，把一个行向量转化成列向量。</p>
-</li>
-</ul>
-<ul>
-<li><strong>代价 函数</strong>：我们希望有一个算法，能够让我们找到权重和偏置，以至于网络的输出y(x) 能够拟合所有的训练输入x。为了量化我们如何实现这个目标，我们定义了代价函数：</li>
-</ul>
-<p><img src="/2021/01/19/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E4%B8%8E%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-note/image-20210121195359475.png" alt="image-20210121195359475" style="zoom:80%;"></p>
-<ul>
-<li><code>w</code>：所有的网络中权重的集合；<code>b</code>：所有的偏置；<code>n</code>：训练输入数据的个数；<code>a</code>：当输入为 x 时输出的向量；符号<code>||v||</code>指的是向量v的模。</li>
-<li>我们把C称为<strong>二次代价函数</strong> or <strong>均方误差</strong> or <strong>MSE</strong>。</li>
-<li><p>该函数是非负的，其值相当小，C(w,b) $\approx$ 0 。精确的说是在对于所有训练输入x，y(x)接近于输出a时。</p>
-</li>
-<li><p>我们需要使我们的学习算法找到合适的权重和偏置，使得C(w,b) $\approx$ 0，网络就能很好的工作。</p>
-</li>
-<li>我们采用<strong>梯度下降</strong>的算法来达到这个目的。</li>
-<li>思考：为什么不适用正确分类的图片数量作为评量评估网络的能力？<br>被正确分类的图片数量所关于权重和偏置的函数并不是一个平滑函数，大多数情况下，对权重和偏置做出的微小变动完全不会影响被正确分类的图像数量。 </li>
-<li>在该过程我们应该将精力集中在<strong>如何最小化代价函数</strong>，可以忽略MNIST，权重和偏置的等前面所提及的东西。</li>
-</ul>
-<ul>
-<li><p><strong>最小化过程——梯度下降算法</strong><br>假设我们最小化函数C(v)，我们用v代替w和b以强调它可能是任意的函数。为了最小化C(v)我们想象C是一个只有两个变量$v_{1}$和$v_{2}$的函数：<br><img src="/2021/01/19/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E4%B8%8E%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-note/image-20210122144421179.png" alt="image-20210122144421179" style="zoom:80%;"><br>我们要找到C的全局最小值，对于上图我们一眼就能找到最小值。但通常函数C可能是一个复杂的多元函数，看一下就能找到最小值是不可能的。<br>一种方法是：<strong>微积分来解析最小值</strong>。但是变量过多的话就是噩梦，此时使用微积分显然是不可行的。<br>Luckily，<strong>有一种推导法暗示有一种算法能够得到很好的效果</strong>。</p>
-<ul>
-<li><p>将函数想象成一个山谷，我们想象有一个小球从山谷的斜坡滚落，日常经验告诉我们这个球最终会滚到谷底。</p>
-</li>
-<li><p>随机给球体一个起始位置，然后模拟球体滚落到谷底的运动。通过计算C的导数来简单模拟——这些导数能够告诉我们山谷中局部“形状”。</p>
-</li>
-<li><p>当我们在$v_{1}$和$v_{2}$方向分别将球体移动一个很小的量，微积分告诉我们C将会有如下变化:</p>
-</li>
-<li><script type="math/tex; mode=display">
-\Delta C \approx \frac{\partial C}{\partial v_{1}}\Delta v_{1} + \frac{\partial C}{\partial v_{2}}\Delta v_{2}</script></li>
-<li><p>寻找一中选择$\Delta v_{1}$和$\Delta v_{2}$使得$\Delta C$为负的方法。先定义$\Delta v$为$v$的变化向量，$\Delta v \equiv (\Delta v_1, \Delta v_2)^T$，T是转置符号。我们也定义C的梯度为偏导数的向量，$(\frac{\partial C}{\partial v_1},\frac{\partial C}{\partial v_2})^T$.我们用$\bigtriangledown C$表示梯度向量，即：<br>$\bigtriangledown C =(\frac{\partial C}{\partial v_1},\frac{\partial C}{\partial v_2})^T$</p>
-</li>
-<li><p>$\Delta C \approx \bigtriangledown C \cdot \Delta v$ 。$\bigtriangledown C$把$v$的变化关联为C的变化。——func1</p>
-</li>
-<li><p>我们选取$\Delta v = -\eta \bigtriangledown C$ ，这里的$\eta$是个很小的正数(<strong>学习速率</strong>)。——func2</p>
-</li>
-<li><p>结合上述两个式子：$\Delta C \approx - \eta \bigtriangledown C \cdot \bigtriangledown C = -\eta||\bigtriangledown C||^2$，由于$||\bigtriangledown C||^2 \geq 0$，这保证了$\Delta C \leq 0$，即，我们按照上面的选取规则$C$会一直减小，不会增大。因此，我们将上面的方程2用于定义球体在梯度下降算法中的“运动定律”。我们用上面的方程计算$\Delta v$，来移动球体的位置$v$：$v \rightarrow v’ = v-\eta \bigtriangledown C$ 。</p>
-</li>
-<li><p>不断更新规则来计算下一次移动，反复进行，将持续减小C直到获得一个全局最小值。</p>
-</li>
-<li><p><strong>总结：</strong>重复计算梯度$\bigtriangledown C$，然后沿着相反方向移动，沿着山谷“滚路”。为了是 梯度下降能够正确运行，我们需要选择足够小的学习速率$\eta$使得func2能够得到很好的近似。如果不这样我们会以$\Delta C &gt; 0$结束；同时，也不能使$\eta$太小，否则会使$\Delta v$变化极小，梯度下降算法就会运行的非常慢。</p>
-</li>
-<li><p><strong>扩展：</strong>函数$C$具有多个变量时</p>
-</li>
-</ul>
-</li>
-</ul>
-<script type="math/tex; mode=display">
-\Delta v=(\Delta v_1,...,\Delta v_m)</script><script type="math/tex; mode=display">
-\Delta C \approx \bigtriangledown C \cdot \Delta v</script><script type="math/tex; mode=display">
-\bigtriangledown C \equiv (\frac{\part C}{\part v_1},...,\frac{\part C}{\part v_m})^T</script><script type="math/tex; mode=display">
-\Delta v = -\eta \bigtriangledown C</script><script type="math/tex; mode=display">
-v \rightarrow v' = v-\eta \bigtriangledown C</script><ul>
-<li><strong>使用梯度下降算法</strong><ul>
-<li>“位置”变量用权重和偏置两个变量代替：$w_k,b_l$。</li>
-<li>$w_k \rightarrow w_k’= w_k - \eta \frac {\partial C}{\partial w_k}$</li>
-<li>$b_l \rightarrow b_l’= b_l - \eta \frac {\partial C}{\partial b_L}$</li>
-<li>问题：$C= \frac{1} n \Sigma_x \bigtriangledown C_x$是普及每个训练样本代价$C_x \equiv \frac {||y(x)-a||^2} {2}$的平均值。在实践中，为了计算梯度$\bigtriangledown C$，我们需要为每个训练输入$x$单独的计算梯度值$\bigtriangledown C_x$，然后求平均值，这蒋辉使学习变得相当缓慢。</li>
-<li>方案：<strong>随机梯度下降</strong><br>其思想：随机选取小量训练样本来计算$\bigtriangledown C_x$进而估算梯度$\bigtriangledown C$。,<br>随机选取小量的m个训练输入来工作，我们将其标记为$X_1,…,X_m$ ，称为<strong>小批量数据（mini-batcch)</strong>。假设足够大，我们期望$\bigtriangledown C_{X_j}$的平均值大致等于整个$\bigtriangledown C_x$的平均值，即：$\frac{\Sigma^m_{j=1} \bigtriangledown C_{X_j}}{m} \approx \frac{\Sigma_{x} \bigtriangledown C_{x}}{n} = \bigtriangledown C $<br>$\bigtriangledown C \approx \frac{1} {m} \sum ^m_{j=1} \bigtriangledown C_{X}$ </li>
-<li>将其明确地和神经网路的学习联系起来，假设$w_k$和$b_l$表示神经网路中 权重和偏置，梯度下降通过随机地选取并训练输入的小批量数据来工作<br>$w_k \rightarrow w_k’ = w_k - \frac{\eta}{m} \sum_j \frac{\partial C_{X_j}}{\partial w_k}$<br>$b_l \rightarrow b_l’ = b_l - \frac{\eta}{m} \sum_j \frac{\partial C_{X_j}}{\partial b_l}$<br>其中两个求和符号实在当前小批量数据中的所有训练样本$X_j$上进行的。然后我们再挑选另一随机选定的小批量数据去训练，直到我们用完了所有的训练输入，这被称为<strong>完成了一个训练迭代期(epoch)</strong>,然后我们就会开始 另一个新的训练迭代期。</li>
-</ul>
-</li>
-</ul>
-<h2 id="实现我们的网络来分类数字"><a href="#实现我们的网络来分类数字" class="headerlink" title="实现我们的网络来分类数字"></a>实现我们的网络来分类数字</h2><h1 id="反向传播算法如何工作"><a href="#反向传播算法如何工作" class="headerlink" title="反向传播算法如何工作"></a>反向传播算法如何工作</h1><h1 id="改进神经网络的学习方法"><a href="#改进神经网络的学习方法" class="headerlink" title="改进神经网络的学习方法"></a>改进神经网络的学习方法</h1><h1 id="神经网络可以计算任何函数的可视化证明"><a href="#神经网络可以计算任何函数的可视化证明" class="headerlink" title="神经网络可以计算任何函数的可视化证明"></a>神经网络可以计算任何函数的可视化证明</h1><h1 id="深度神经网络为何很难训练"><a href="#深度神经网络为何很难训练" class="headerlink" title="深度神经网络为何很难训练"></a>深度神经网络为何很难训练</h1><h1 id="深度学习"><a href="#深度学习" class="headerlink" title="深度学习"></a>深度学习</h1>]]></content>
-      <categories>
-        <category>神经网络</category>
-      </categories>
-      <tags>
-        <tag>神经网络</tag>
-      </tags>
+<h1 id="常见问题"><a href="#常见问题" class="headerlink" title="常见问题"></a>常见问题</h1><h2 id="blog中插入图片"><a href="#blog中插入图片" class="headerlink" title="blog中插入图片"></a>blog中插入图片</h2><p>在配置文件中打开<strong>文章资源文件夹</strong></p>
+<p><code>post_asset_folder: true</code></p>
+<p>安装插件</p>
+<p><code>npm install hexo-asset-image --save</code></p>
+<p>打开文件<code>/node_modules/hexo-asset-image/index.js</code>将代码替换为下列代码</p>
+<p>（在此感谢Ericam_ 大神：<a href="https://links.jianshu.com/go?to=https%3A%2F%2Fblog.csdn.net%2Fxjm850552586">https://blog.csdn.net/xjm850552586</a>）</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="string">&#x27;use strict&#x27;</span>;</span><br><span class="line">var cheerio = require(<span class="string">&#x27;cheerio&#x27;</span>);</span><br><span class="line"></span><br><span class="line">// http://stackoverflow.com/questions/14480345/how-to-get-the-nth-occurrence-in-a-string</span><br><span class="line"><span class="keyword">function</span> getPosition(str, m, i) &#123;</span><br><span class="line">  <span class="built_in">return</span> str.split(m, i).join(m).length;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var version = String(hexo.version).split(<span class="string">&#x27;.&#x27;</span>);</span><br><span class="line">hexo.extend.filter.register(<span class="string">&#x27;after_post_render&#x27;</span>, <span class="keyword">function</span>(data)&#123;</span><br><span class="line">  var config = hexo.config;</span><br><span class="line">  <span class="keyword">if</span>(config.post_asset_folder)&#123;</span><br><span class="line">        var link = data.permalink;</span><br><span class="line">    <span class="keyword">if</span>(version.length &gt; 0 &amp;&amp; Number(version[0]) == 3)</span><br><span class="line">       var beginPos = getPosition(link, <span class="string">&#x27;/&#x27;</span>, 1) + 1;</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">       var beginPos = getPosition(link, <span class="string">&#x27;/&#x27;</span>, 3) + 1;</span><br><span class="line">    // In hexo 3.1.1, the permalink of <span class="string">&quot;about&quot;</span> page is like <span class="string">&quot;.../about/index.html&quot;</span>.</span><br><span class="line">    var endPos = link.lastIndexOf(<span class="string">&#x27;/&#x27;</span>) + 1;</span><br><span class="line">    link = link.substring(beginPos, endPos);</span><br><span class="line"></span><br><span class="line">    var toprocess = [<span class="string">&#x27;excerpt&#x27;</span>, <span class="string">&#x27;more&#x27;</span>, <span class="string">&#x27;content&#x27;</span>];</span><br><span class="line">    <span class="keyword">for</span>(var i = 0; i &lt; toprocess.length; i++)&#123;</span><br><span class="line">      var key = toprocess[i];</span><br><span class="line"> </span><br><span class="line">      var $ = cheerio.load(data[key], &#123;</span><br><span class="line">        ignoreWhitespace: <span class="literal">false</span>,</span><br><span class="line">        xmlMode: <span class="literal">false</span>,</span><br><span class="line">        lowerCaseTags: <span class="literal">false</span>,</span><br><span class="line">        decodeEntities: <span class="literal">false</span></span><br><span class="line">      &#125;);</span><br><span class="line"></span><br><span class="line">      $(<span class="string">&#x27;img&#x27;</span>).each(<span class="function"><span class="title">function</span></span>()&#123;</span><br><span class="line">        <span class="keyword">if</span> ($(this).attr(<span class="string">&#x27;src&#x27;</span>))&#123;</span><br><span class="line">            // For windows style path, we replace <span class="string">&#x27;\&#x27;</span> to <span class="string">&#x27;/&#x27;</span>.</span><br><span class="line">            var src = $(this).attr(<span class="string">&#x27;src&#x27;</span>).replace(<span class="string">&#x27;\\&#x27;</span>, <span class="string">&#x27;/&#x27;</span>);</span><br><span class="line">            <span class="keyword">if</span>(!/http[s]*.*|\/\/.*/.<span class="built_in">test</span>(src) &amp;&amp;</span><br><span class="line">               !/^\s*\//.<span class="built_in">test</span>(src)) &#123;</span><br><span class="line">              // For <span class="string">&quot;about&quot;</span> page, the first part of <span class="string">&quot;src&quot;</span> can<span class="string">&#x27;t be removed.</span></span><br><span class="line"><span class="string">              // In addition, to support multi-level local directory.</span></span><br><span class="line"><span class="string">              var linkArray = link.split(&#x27;</span>/<span class="string">&#x27;).filter(function(elem)&#123;</span></span><br><span class="line"><span class="string">                return elem != &#x27;</span><span class="string">&#x27;;</span></span><br><span class="line"><span class="string">              &#125;);</span></span><br><span class="line"><span class="string">              var srcArray = src.split(&#x27;</span>/<span class="string">&#x27;).filter(function(elem)&#123;</span></span><br><span class="line"><span class="string">                return elem != &#x27;</span><span class="string">&#x27; &amp;&amp; elem != &#x27;</span>.<span class="string">&#x27;;</span></span><br><span class="line"><span class="string">              &#125;);</span></span><br><span class="line"><span class="string">              if(srcArray.length &gt; 1)</span></span><br><span class="line"><span class="string">                srcArray.shift();</span></span><br><span class="line"><span class="string">              src = srcArray.join(&#x27;</span>/<span class="string">&#x27;);</span></span><br><span class="line"><span class="string">              $(this).attr(&#x27;</span>src<span class="string">&#x27;, config.root + link + src);</span></span><br><span class="line"><span class="string">              console.info&amp;&amp;console.info(&quot;update link as:--&gt;&quot;+config.root + link + src);</span></span><br><span class="line"><span class="string">            &#125;</span></span><br><span class="line"><span class="string">        &#125;else&#123;</span></span><br><span class="line"><span class="string">            console.info&amp;&amp;console.info(&quot;no src attr, skipped...&quot;);</span></span><br><span class="line"><span class="string">            console.info&amp;&amp;console.info($(this));</span></span><br><span class="line"><span class="string">        &#125;</span></span><br><span class="line"><span class="string">      &#125;);</span></span><br><span class="line"><span class="string">      data[key] = $.html();</span></span><br><span class="line"><span class="string">    &#125;</span></span><br><span class="line"><span class="string">  &#125;</span></span><br><span class="line"><span class="string">&#125;);</span></span><br></pre></td></tr></table></figure>
+<p>Typora对于插入图片的支持做得非常好，在<code>文件-&gt;偏好设置-&gt;图像</code>中选择<code>复制到指定的路径</code> <code>./$&#123;filename&#125;</code> </p>
+<p>使用该配置后，可以直接复制网页中的图片地址，粘贴到Typora中后，会直接复制该图片到文章资源文件夹，同时自动更改路径。</p>
+<p>如复制网络路径的图片<code>https://...../image.jpg</code>粘贴到Typora中叫<code>文章名</code>的文章后，图片会自动变为<code>![](文章名/image.jpg)</code>。</p>
+<p>但我们知道部署后，文件路径是不同的，所以当我们插入完所有的图片后，我们还需要删除每个图片路径中的<code>文件名/</code>。不慌，也很简单。</p>
+<p>在Typora编辑器中，使用<code>&lt;C-f&gt;</code>快捷键，将所有的<code>文章名/</code>替换为空即可删除。</p>
+<p><img src="/2021/01/19/hexo-next-blog%E6%90%AD%E5%BB%BA%E5%8F%8A%E4%BD%BF%E7%94%A8/among-us-3840x2160-artwork-4k-23114-1611067673187.jpg" alt="among-us-3840x2160-artwork-4k-23114"></p>
+]]></content>
   </entry>
   <entry>
     <title>markdown语法</title>
@@ -254,31 +83,6 @@ v \rightarrow v' = v-\eta \bigtriangledown C</script><ul>
 <p><img src="/2021/01/19/markdown%E8%AF%AD%E6%B3%95/20190703164439850.png" alt="7-9"></p>
 <p><img src="/2021/01/19/markdown%E8%AF%AD%E6%B3%95/20190703164500390.png" alt="10-13">    </p>
 <h1 id="markdown-特殊操作"><a href="#markdown-特殊操作" class="headerlink" title="markdown 特殊操作"></a>markdown 特殊操作</h1><h2 id="换行"><a href="#换行" class="headerlink" title="换行"></a>换行</h2><p><code>&lt;br/</code>可以实现换行但与Enter效果不同</p>
-]]></content>
-  </entry>
-  <entry>
-    <title>hexo-next blog搭建及使用</title>
-    <url>/2021/01/19/hexo-next-blog%E6%90%AD%E5%BB%BA%E5%8F%8A%E4%BD%BF%E7%94%A8/</url>
-    <content><![CDATA[<p>hexo-next blog搭建过程及使用过程中的问题及解决方案</p>
-<a id="more"></a>
-
-
-
-<h1 id="常见问题"><a href="#常见问题" class="headerlink" title="常见问题"></a>常见问题</h1><h2 id="blog中插入图片"><a href="#blog中插入图片" class="headerlink" title="blog中插入图片"></a>blog中插入图片</h2><p>在配置文件中打开<strong>文章资源文件夹</strong></p>
-<p><code>post_asset_folder: true</code></p>
-<p>安装插件</p>
-<p><code> npm install hexo-asset-image --save</code></p>
-<p>打开文件<code>/node_modules/hexo-asset-image/index.js</code>将代码替换为下列代码</p>
-<p>（在此感谢Ericam_ 大神：<a href="https://links.jianshu.com/go?to=https://blog.csdn.net/xjm850552586">https://blog.csdn.net/xjm850552586</a>）</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="string">&#x27;use strict&#x27;</span>;</span><br><span class="line">var cheerio = require(<span class="string">&#x27;cheerio&#x27;</span>);</span><br><span class="line"></span><br><span class="line">// http://stackoverflow.com/questions/14480345/how-to-get-the-nth-occurrence-in-a-string</span><br><span class="line"><span class="keyword">function</span> getPosition(str, m, i) &#123;</span><br><span class="line">  <span class="built_in">return</span> str.split(m, i).join(m).length;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var version = String(hexo.version).split(<span class="string">&#x27;.&#x27;</span>);</span><br><span class="line">hexo.extend.filter.register(<span class="string">&#x27;after_post_render&#x27;</span>, <span class="keyword">function</span>(data)&#123;</span><br><span class="line">  var config = hexo.config;</span><br><span class="line">  <span class="keyword">if</span>(config.post_asset_folder)&#123;</span><br><span class="line">        var link = data.permalink;</span><br><span class="line">    <span class="keyword">if</span>(version.length &gt; 0 &amp;&amp; Number(version[0]) == 3)</span><br><span class="line">       var beginPos = getPosition(link, <span class="string">&#x27;/&#x27;</span>, 1) + 1;</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">       var beginPos = getPosition(link, <span class="string">&#x27;/&#x27;</span>, 3) + 1;</span><br><span class="line">    // In hexo 3.1.1, the permalink of <span class="string">&quot;about&quot;</span> page is like <span class="string">&quot;.../about/index.html&quot;</span>.</span><br><span class="line">    var endPos = link.lastIndexOf(<span class="string">&#x27;/&#x27;</span>) + 1;</span><br><span class="line">    link = link.substring(beginPos, endPos);</span><br><span class="line"></span><br><span class="line">    var toprocess = [<span class="string">&#x27;excerpt&#x27;</span>, <span class="string">&#x27;more&#x27;</span>, <span class="string">&#x27;content&#x27;</span>];</span><br><span class="line">    <span class="keyword">for</span>(var i = 0; i &lt; toprocess.length; i++)&#123;</span><br><span class="line">      var key = toprocess[i];</span><br><span class="line"> </span><br><span class="line">      var $ = cheerio.load(data[key], &#123;</span><br><span class="line">        ignoreWhitespace: <span class="literal">false</span>,</span><br><span class="line">        xmlMode: <span class="literal">false</span>,</span><br><span class="line">        lowerCaseTags: <span class="literal">false</span>,</span><br><span class="line">        decodeEntities: <span class="literal">false</span></span><br><span class="line">      &#125;);</span><br><span class="line"></span><br><span class="line">      $(<span class="string">&#x27;img&#x27;</span>).each(<span class="function"><span class="title">function</span></span>()&#123;</span><br><span class="line">        <span class="keyword">if</span> ($(this).attr(<span class="string">&#x27;src&#x27;</span>))&#123;</span><br><span class="line">            // For windows style path, we replace <span class="string">&#x27;\&#x27;</span> to <span class="string">&#x27;/&#x27;</span>.</span><br><span class="line">            var src = $(this).attr(<span class="string">&#x27;src&#x27;</span>).replace(<span class="string">&#x27;\\&#x27;</span>, <span class="string">&#x27;/&#x27;</span>);</span><br><span class="line">            <span class="keyword">if</span>(!/http[s]*.*|\/\/.*/.<span class="built_in">test</span>(src) &amp;&amp;</span><br><span class="line">               !/^\s*\//.<span class="built_in">test</span>(src)) &#123;</span><br><span class="line">              // For <span class="string">&quot;about&quot;</span> page, the first part of <span class="string">&quot;src&quot;</span> can<span class="string">&#x27;t be removed.</span></span><br><span class="line"><span class="string">              // In addition, to support multi-level local directory.</span></span><br><span class="line"><span class="string">              var linkArray = link.split(&#x27;</span>/<span class="string">&#x27;).filter(function(elem)&#123;</span></span><br><span class="line"><span class="string">                return elem != &#x27;</span><span class="string">&#x27;;</span></span><br><span class="line"><span class="string">              &#125;);</span></span><br><span class="line"><span class="string">              var srcArray = src.split(&#x27;</span>/<span class="string">&#x27;).filter(function(elem)&#123;</span></span><br><span class="line"><span class="string">                return elem != &#x27;</span><span class="string">&#x27; &amp;&amp; elem != &#x27;</span>.<span class="string">&#x27;;</span></span><br><span class="line"><span class="string">              &#125;);</span></span><br><span class="line"><span class="string">              if(srcArray.length &gt; 1)</span></span><br><span class="line"><span class="string">                srcArray.shift();</span></span><br><span class="line"><span class="string">              src = srcArray.join(&#x27;</span>/<span class="string">&#x27;);</span></span><br><span class="line"><span class="string">              $(this).attr(&#x27;</span>src<span class="string">&#x27;, config.root + link + src);</span></span><br><span class="line"><span class="string">              console.info&amp;&amp;console.info(&quot;update link as:--&gt;&quot;+config.root + link + src);</span></span><br><span class="line"><span class="string">            &#125;</span></span><br><span class="line"><span class="string">        &#125;else&#123;</span></span><br><span class="line"><span class="string">            console.info&amp;&amp;console.info(&quot;no src attr, skipped...&quot;);</span></span><br><span class="line"><span class="string">            console.info&amp;&amp;console.info($(this));</span></span><br><span class="line"><span class="string">        &#125;</span></span><br><span class="line"><span class="string">      &#125;);</span></span><br><span class="line"><span class="string">      data[key] = $.html();</span></span><br><span class="line"><span class="string">    &#125;</span></span><br><span class="line"><span class="string">  &#125;</span></span><br><span class="line"><span class="string">&#125;);</span></span><br></pre></td></tr></table></figure>
-
-
-<p>Typora对于插入图片的支持做得非常好，在<code>文件-&gt;偏好设置-&gt;图像</code>中选择<code>复制到指定的路径</code> <code>./$&#123;filename&#125;</code> </p>
-<p>使用该配置后，可以直接复制网页中的图片地址，粘贴到Typora中后，会直接复制该图片到文章资源文件夹，同时自动更改路径。</p>
-<p>如复制网络路径的图片<code>https://...../image.jpg</code>粘贴到Typora中叫<code>文章名</code>的文章后，图片会自动变为<code>![](文章名/image.jpg)</code>。</p>
-<p>但我们知道部署后，文件路径是不同的，所以当我们插入完所有的图片后，我们还需要删除每个图片路径中的<code>文件名/</code>。不慌，也很简单。</p>
-<p>在Typora编辑器中，使用<code>&lt;C-f&gt;</code>快捷键，将所有的<code>文章名/</code>替换为空即可删除。</p>
-<p><img src="/2021/01/19/hexo-next-blog%E6%90%AD%E5%BB%BA%E5%8F%8A%E4%BD%BF%E7%94%A8/among-us-3840x2160-artwork-4k-23114-1611067673187.jpg" alt="among-us-3840x2160-artwork-4k-23114"></p>
 ]]></content>
   </entry>
   <entry>
@@ -339,6 +143,24 @@ v \rightarrow v' = v-\eta \bigtriangledown C</script><ul>
 ]]></content>
       <tags>
         <tag>python</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>vscode使用指南</title>
+    <url>/2021/03/05/vscode%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
+    <title>基于CNN+BiSLTM+CTC的智能发票识别系统</title>
+    <url>/2021/03/12/%E5%9F%BA%E4%BA%8ECNN-BiSLTM-CTC%E7%9A%84%E6%99%BA%E8%83%BD%E5%8F%91%E7%A5%A8%E8%AF%86%E5%88%AB%E7%B3%BB%E7%BB%9F/</url>
+    <content><![CDATA[<a id="more"></a>
+<h1 id="CNN-卷积神经网络"><a href="#CNN-卷积神经网络" class="headerlink" title="CNN 卷积神经网络"></a>CNN 卷积神经网络</h1><h2 id="概览"><a href="#概览" class="headerlink" title="概览"></a>概览</h2><h3 id="卷积神经网络"><a href="#卷积神经网络" class="headerlink" title="卷积神经网络"></a>卷积神经网络</h3><p><strong>Convolutional Neural Network</strong> 是一种前馈神经网络，它的神经元可以响应一部分覆盖范围内的周围单元，对于大型图像处理有出色的表现。</p>
+<p>与普通神经网络非常相似，他们都具有可学习的权重和偏置常量(biases)的神经元组成。每个神经元都接受一些输入，并做一些点积计算，输出是每个分类的分数，普通神经网络里的一些计算技巧在这里依然适用。</p>
+<p><strong>不同的是</strong>：卷积神经网络输入的是图像，可以让我们把特定的性质编码入网络结构，使我们的前馈函数更加有效率，并减少了大量参数。</p>
+<h3 id="具有三维体积的神经元-3D-volumes-of-neurons"><a href="#具有三维体积的神经元-3D-volumes-of-neurons" class="headerlink" title="具有三维体积的神经元 (3D volumes of neurons)"></a>具有三维体积的神经元 (3D volumes of neurons)</h3><p>卷积神经网络利用输入是图片的特点，将神经元设计成三个维度：<strong>width</strong>, <strong>height</strong>, <strong>depth</strong>(注意：这里的depth不是指神经元的深度，而是用来描述神经元的)。比如输入的大小是32x32x3(rgb)，那么输入的神经元也就具有32x32x3的维度。   </p>
+<h1 id="BiSLTM"><a href="#BiSLTM" class="headerlink" title="BiSLTM"></a>BiSLTM</h1><h1 id="CTC"><a href="#CTC" class="headerlink" title="CTC"></a>CTC</h1>]]></content>
+      <tags>
+        <tag>神经网络</tag>
       </tags>
   </entry>
   <entry>
@@ -649,6 +471,196 @@ v \rightarrow v' = v-\eta \bigtriangledown C</script><ul>
       </categories>
       <tags>
         <tag>JAVA</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>神经网络与深度学习-note</title>
+    <url>/2021/01/19/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E4%B8%8E%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-note/</url>
+    <content><![CDATA[<p><img src="/2021/01/19/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E4%B8%8E%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-note/image-20210120081213727.png" alt="image-20210120081213727"></p>
+<p><em>记录Michael Nielsen 的《神经网络与深度学习》学习过程。</em></p>
+<a id="more"></a>
+<h1 id="使用神经网络识别手写数字"><a href="#使用神经网络识别手写数字" class="headerlink" title="使用神经网络识别手写数字"></a>使用神经网络识别手写数字</h1><p>识别数字主要思想：获取大量的手写数字，常称作训练样本，然后开发出一个可以从这些训练样本中进行学习的系统。即神经网络使用样本来自动推断出识别手写数字的规则。</p>
+<p>提高准确性：通过增加训练样本的数量，神经网络可以学到更多关于手写数字的知识。</p>
+<h2 id="感知器"><a href="#感知器" class="headerlink" title="感知器"></a>感知器</h2><h3 id="感知器的定义"><a href="#感知器的定义" class="headerlink" title="感知器的定义"></a>感知器的定义</h3><ul>
+<li>依据权重来做出决定的设备。</li>
+<li>接收几个二进制输入，产生一个二进制输出</li>
+</ul>
+<p><img src="/2021/01/19/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E4%B8%8E%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-note/image-20210120074657848.png" alt="image-20210120074657848"></p>
+<ul>
+<li><p>引入<strong>权重</strong>规则，用其表示相应输入对于输出的重要性。</p>
+</li>
+<li><p><strong>阈(yu)值</strong>是一个实数，一个神经元的参数。神经元的输出(0 or 1)由分配权重后的总和与阈值的大小关系决定。</p>
+<p><img src="/2021/01/19/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E4%B8%8E%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-note/image-20210120075501785.png" alt></p>
+</li>
+</ul>
+<h3 id="简化感知器的数学描述"><a href="#简化感知器的数学描述" class="headerlink" title="简化感知器的数学描述"></a>简化感知器的数学描述</h3><ul>
+<li><p>第一个变动是用w和x对应权重和输入的向量的点乘。</p>
+</li>
+<li><p>第二个变动用感知器的偏置b=-threshold代替。</p>
+</li>
+<li><p><strong>偏置</strong>：一种标识让感知器输出1(激活感知器)有多容易的估算。偏置非常大时输出1是很容易的，偏置非常小时输出1则很困难。</p>
+<p><img src="/2021/01/19/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E4%B8%8E%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-note/image-20210120092559889.png" alt></p>
+</li>
+</ul>
+<h3 id="感知器网络"><a href="#感知器网络" class="headerlink" title="感知器网络"></a>感知器网络</h3><ul>
+<li><p>第一层感知器——通过权衡输入依据做出三个简单决定。</p>
+</li>
+<li><p>第二层感知器——权衡第一层的决策结果并作出决定。以这种方式，二层感知器可以比一层感知器做出更复杂和抽象的决策。</p>
+</li>
+<li><strong>一个感知器只有一个输出</strong>，下图箭头仅仅便于说明一个一个感知器的输出被用于多个感知器。</li>
+</ul>
+<p><img src="/2021/01/19/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E4%B8%8E%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-note/image-20210120093803752.png" alt="image-20210120093803752" style="zoom: 67%;"></p>
+<h3 id="感知器计算基本逻辑的功能"><a href="#感知器计算基本逻辑的功能" class="headerlink" title="感知器计算基本逻辑的功能"></a>感知器计算基本逻辑的功能</h3><ul>
+<li><p>运算基础，例如“<strong>与</strong>”，“<strong>或</strong>”和“<strong>与非</strong></p>
+</li>
+<li><p>与非门感知器：输入00产生1，输入11产生0</p>
+</li>
+</ul>
+<p><img src="/2021/01/19/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E4%B8%8E%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-note/image-20210120103347029.png" alt="image-20210120103347029"></p>
+<ul>
+<li>与非门是通用运算，以此为基础我们可以用感知器网络来计算任何逻辑功能</li>
+<li>构建一个电路将两个二进制数相加</li>
+</ul>
+<p><img src="/2021/01/19/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E4%B8%8E%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-note/image-20210120115000598.png" alt="image-20210120115000598" style="zoom:80%;"></p>
+<ul>
+<li>将与非门替换为感知器</li>
+</ul>
+<p><img src="/2021/01/19/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E4%B8%8E%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-note/image-20210120115226182.png" alt="image-20210120115226182" style="zoom:67%;"></p>
+<ul>
+<li>最左边感知器的输出被两次作为底部感知器的输入。进而我们可以简单把两条线合并为到一个权重为-4的连接</li>
+</ul>
+<p><img src="/2021/01/19/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E4%B8%8E%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-note/image-20210120115424951.png" alt="image-20210120115424951" style="zoom: 67%;"></p>
+<ul>
+<li><strong>输入层</strong>：将<code>x1</code> <code>x2</code>这样的感知器网路左边的浮动变量可以画一层额外的感知器来方便输入编码</li>
+</ul>
+<p><img src="/2021/01/19/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E4%B8%8E%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-note/image-20210120115831884.png" alt="image-20210120115831884" style="zoom:67%;"></p>
+<ul>
+<li>输入感知器：可以完全不将其看作感知器，而是简单的定义为输出期望值的特殊单元。</li>
+</ul>
+<h2 id="S型神经元"><a href="#S型神经元" class="headerlink" title="S型神经元"></a>S型神经元</h2><h3 id="学习算法"><a href="#学习算法" class="headerlink" title="学习算法"></a>学习算法</h3><p>自动调节人工神经元的权重和偏置</p>
+<ul>
+<li>学习过程：如果对权重(or 偏置)的微小的改动能够仅仅引起输出的微小变化，那么我们可以利用这一事实来修改权重和偏置，让我们的网络表现得像我们想要的那样。假设网络误将一个”9“识别为”8“。我们能够计算出对权重和偏置的微小改动，使网络将其正确识别。我们重复这个工作，反复修改权重和偏置来产生更好的输出。</li>
+<li>问题：网络中单个感知器的权重或偏置的微小改动有时候会引起那个感知器的输出完全翻转，如0变到1。这样的翻转可能接下来引起其余网路的行为以极其复杂的方式完全改变。虽然”9“可能别正确分类，网络在其他图像上的行为很可能以一些很难控制的方式被完全改变。这使得逐步修改权重和偏置来让网络接近期望行为变得困难。</li>
+</ul>
+<p><img src="/2021/01/19/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E4%B8%8E%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-note/image-20210120173437965.png" alt="image-20210120173437965" style="zoom:80%;"></p>
+<ul>
+<li><p>解决方案：引入一种称为S型神经元的新的人工神经元来克服这个问题。S型神经元和感知器类似，但是被修改为权重和偏置的微小改动只引起输出的微小变化(这对于让神经元网络学习起来是很关键的)。</p>
+</li>
+<li><p><strong>S型神经元</strong>：有多个输入，这些输入可以取[0,1]中的任意值，而不仅仅是0和1。具有权重和偏置。但输出不是0或者1，而是<code>sigma(w·x+b)</code>,该函数为S型函数(逻辑函数)，定义为：</p>
+</li>
+</ul>
+<p>  <img src="/2021/01/19/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E4%B8%8E%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-note/image-20210120180707163.png" alt="image-20210120180707163"></p>
+<p>  代入神经元参数为：</p>
+<p>  <img src="/2021/01/19/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E4%B8%8E%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-note/image-20210120180751519.png" alt="image-20210120180751519"></p>
+<ul>
+<li>S型神经元和感知器关系：当<code>z=w·x+b</code>取很大或者很小时其S型神经元的行为和感知器非常近似。只有<code>z</code>取中间值时与感知模型有较大的偏离。</li>
+</ul>
+<p><img src="/2021/01/19/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E4%B8%8E%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-note/image-20210120181846815.png" alt="image-20210120181846815" style="zoom:67%;"></p>
+<p><img src="/2021/01/19/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E4%B8%8E%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-note/image-20210120182011643.png" alt="image-20210120182011643" style="zoom:67%;"></p>
+<ul>
+<li>如果<code>sigma</code>函数是个阶跃函数，那么S型神经元将会成为一个感知器。之所以利用<code>sigma</code>函数是为了得到一个平滑的感知器。其<strong>平滑特性</strong>正是解决问题的关键因素，意味着权重和偏置的微小变化会从神经元产生一个微小的输出变化，利用微积分我们可以得到下式：</li>
+</ul>
+<p><img src="/2021/01/19/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E4%B8%8E%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-note/image-20210120182810071.png" alt="image-20210120182810071" style="zoom:80%;"></p>
+<ul>
+<li><p>理解:<code>Δoutput</code>是一个反应Δwj和Δb的线性函数，使得选择权重和偏置的微小变化来达到输出的微小变化的运算变得容易。因此，当S型神经元有更多和感知器相同的本质的行为时，计算如何变化权重和偏置来使输出变化会更加容易。</p>
+</li>
+<li><p>为什么选用上面的<code>sigma</code>函数：对于<code>sigma</code>函数重要的是形状而不是精确形式，选用该函数的目的是简化数学计算，因为指数在求导时有些可爱的属性。</p>
+</li>
+<li>S型神经元输出的解释：并非只输出0 or 1，但我们可以设定一个约定来解决这个问题，例如约定任何至少为0.5的输出表示为“这是某个数字”</li>
+</ul>
+<h2 id="神经网络的架构"><a href="#神经网络的架构" class="headerlink" title="神经网络的架构"></a>神经网络的架构</h2><p>假设我们有这样的网络：</p>
+<p><img src="/2021/01/19/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E4%B8%8E%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-note/image-20210120194421991.png" alt="image-20210120194421991" style="zoom:80%;"></p>
+<ul>
+<li><strong>输入层</strong>：网格中最左边的，其中的神经元为<strong>输入神经元</strong>。</li>
+<li><strong>输出层</strong>：最右边的，有且只有一个<strong>输出神经元</strong>。</li>
+<li><strong>隐藏层</strong>：中间包含既不输入也不输出的神经元的层。</li>
+<li><strong>多层感知器</strong> or <strong>MLP</strong>：这种网络尽管是由S型神经元而不是感知器构成，但也称为多层感知器。</li>
+</ul>
+<p>设计输入输出层通常是比较直接的，隐藏层的设计则堪称一门艺术。特别是，通过一些简单的经验法则来总结隐藏层的设计流程是不可行的。相反，神经网络的研究人员已经为隐藏层开发了许多 设计最优法则。</p>
+<ul>
+<li><strong>前馈神经网络</strong>：以上一层的输出作为下一层的输入。这意味着网络中是没有回路 的——信息总是向前传播，从不反向反馈。</li>
+<li>递归神经网络：反馈环路在其中是可行的，其设计思想是具有休眠前会在一段有限时间内保持激活状态的神经元。</li>
+</ul>
+<h2 id="一个简单的分类手写数字的网络"><a href="#一个简单的分类手写数字的网络" class="headerlink" title="一个简单的分类手写数字的网络"></a>一个简单的分类手写数字的网络</h2><p><img src="/2021/01/19/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E4%B8%8E%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-note/image-20210120194325646.png" alt="image-20210120194325646" style="zoom:80%;"></p>
+<ul>
+<li>网络的输入层包含给输入像素的值进行编码的神经元 ，含有784=28*28个神经元。输入像素是灰度级的，值为1.0表示黑色，值为0.0表示白色，中间数值表示逐渐暗淡的灰色。</li>
+<li>网络的隐藏层用n来表示神经元的数量。</li>
+<li>网络的输出层包含10个神经元。如果第一个神经元激活，即其输出近似为1，那么表明 网络认为数字是一个0。更确切地说，我们把神经元的输出赋予编号0到9，并计算哪个神经元有最高的激活值。</li>
+<li>思考：为什么使用10个输出神经元而不是4个。2^4=16&gt;10完全可以表示10个数字。</li>
+<li></li>
+</ul>
+<h2 id="使用梯度下降算法进行学习"><a href="#使用梯度下降算法进行学习" class="headerlink" title="使用梯度下降算法进行学习"></a>使用梯度下降算法进行学习</h2><ul>
+<li><p>训练数据集：用来学习的数据集。</p>
+</li>
+<li><p><strong>MNIST数据集</strong>：其中包含有数以万计的连带着正确分类器的手写数字的扫描图像。</p>
+<p>我们将使用符号x来表示一个训练输入。为了方便，把每个训练输入x看作一个28*28=784维的向量。我们用y=y(x)表示对应的期望输出，这里的y是一个10维向量。例如有一个“6”的训练图像x，那么y(x) = (0,0,0,0,0,0,1,0,0,0)<sup>T</sup> 则是网络的期望输出。T是转置操作，把一个行向量转化成列向量。</p>
+</li>
+</ul>
+<ul>
+<li><strong>代价 函数</strong>：我们希望有一个算法，能够让我们找到权重和偏置，以至于网络的输出y(x) 能够拟合所有的训练输入x。为了量化我们如何实现这个目标，我们定义了代价函数：</li>
+</ul>
+<p><img src="/2021/01/19/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E4%B8%8E%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-note/image-20210121195359475.png" alt="image-20210121195359475" style="zoom:80%;"></p>
+<ul>
+<li><code>w</code>：所有的网络中权重的集合；<code>b</code>：所有的偏置；<code>n</code>：训练输入数据的个数；<code>a</code>：当输入为 x 时输出的向量；符号<code>||v||</code>指的是向量v的模。</li>
+<li>我们把C称为<strong>二次代价函数</strong> or <strong>均方误差</strong> or <strong>MSE</strong>。</li>
+<li><p>该函数是非负的，其值相当小，C(w,b) $\approx$ 0 。精确的说是在对于所有训练输入x，y(x)接近于输出a时。</p>
+</li>
+<li><p>我们需要使我们的学习算法找到合适的权重和偏置，使得C(w,b) $\approx$ 0，网络就能很好的工作。</p>
+</li>
+<li>我们采用<strong>梯度下降</strong>的算法来达到这个目的。</li>
+<li>思考：为什么不适用正确分类的图片数量作为评量评估网络的能力？<br>被正确分类的图片数量所关于权重和偏置的函数并不是一个平滑函数，大多数情况下，对权重和偏置做出的微小变动完全不会影响被正确分类的图像数量。 </li>
+<li>在该过程我们应该将精力集中在<strong>如何最小化代价函数</strong>，可以忽略MNIST，权重和偏置的等前面所提及的东西。</li>
+</ul>
+<ul>
+<li><p><strong>最小化过程——梯度下降算法</strong><br>假设我们最小化函数C(v)，我们用v代替w和b以强调它可能是任意的函数。为了最小化C(v)我们想象C是一个只有两个变量$v_{1}$和$v_{2}$的函数：<br><img src="/2021/01/19/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E4%B8%8E%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-note/image-20210122144421179.png" alt="image-20210122144421179" style="zoom:80%;"><br>我们要找到C的全局最小值，对于上图我们一眼就能找到最小值。但通常函数C可能是一个复杂的多元函数，看一下就能找到最小值是不可能的。<br>一种方法是：<strong>微积分来解析最小值</strong>。但是变量过多的话就是噩梦，此时使用微积分显然是不可行的。<br>Luckily，<strong>有一种推导法暗示有一种算法能够得到很好的效果</strong>。</p>
+<ul>
+<li><p>将函数想象成一个山谷，我们想象有一个小球从山谷的斜坡滚落，日常经验告诉我们这个球最终会滚到谷底。</p>
+</li>
+<li><p>随机给球体一个起始位置，然后模拟球体滚落到谷底的运动。通过计算C的导数来简单模拟——这些导数能够告诉我们山谷中局部“形状”。</p>
+</li>
+<li><p>当我们在$v_{1}$和$v_{2}$方向分别将球体移动一个很小的量，微积分告诉我们C将会有如下变化:</p>
+</li>
+<li><script type="math/tex; mode=display">
+\Delta C \approx \frac{\partial C}{\partial v_{1}}\Delta v_{1} + \frac{\partial C}{\partial v_{2}}\Delta v_{2}</script></li>
+<li><p>寻找一中选择$\Delta v_{1}$和$\Delta v_{2}$使得$\Delta C$为负的方法。先定义$\Delta v$为$v$的变化向量，$\Delta v \equiv (\Delta v_1, \Delta v_2)^T$，T是转置符号。我们也定义C的梯度为偏导数的向量，$(\frac{\partial C}{\partial v_1},\frac{\partial C}{\partial v_2})^T$.我们用$\bigtriangledown C$表示梯度向量，即：<br>$\bigtriangledown C =(\frac{\partial C}{\partial v_1},\frac{\partial C}{\partial v_2})^T$</p>
+</li>
+<li><p>$\Delta C \approx \bigtriangledown C \cdot \Delta v$ 。$\bigtriangledown C$把$v$的变化关联为C的变化。——func1</p>
+</li>
+<li><p>我们选取$\Delta v = -\eta \bigtriangledown C$ ，这里的$\eta$是个很小的正数(<strong>学习速率</strong>)。——func2</p>
+</li>
+<li><p>结合上述两个式子：$\Delta C \approx - \eta \bigtriangledown C \cdot \bigtriangledown C = -\eta||\bigtriangledown C||^2$，由于$||\bigtriangledown C||^2 \geq 0$，这保证了$\Delta C \leq 0$，即，我们按照上面的选取规则$C$会一直减小，不会增大。因此，我们将上面的方程2用于定义球体在梯度下降算法中的“运动定律”。我们用上面的方程计算$\Delta v$，来移动球体的位置$v$：$v \rightarrow v’ = v-\eta \bigtriangledown C$ 。</p>
+</li>
+<li><p>不断更新规则来计算下一次移动，反复进行，将持续减小C直到获得一个全局最小值。</p>
+</li>
+<li><p><strong>总结：</strong>重复计算梯度$\bigtriangledown C$，然后沿着相反方向移动，沿着山谷“滚路”。为了是 梯度下降能够正确运行，我们需要选择足够小的学习速率$\eta$使得func2能够得到很好的近似。如果不这样我们会以$\Delta C &gt; 0$结束；同时，也不能使$\eta$太小，否则会使$\Delta v$变化极小，梯度下降算法就会运行的非常慢。</p>
+</li>
+<li><p><strong>扩展：</strong>函数$C$具有多个变量时</p>
+</li>
+</ul>
+</li>
+</ul>
+<script type="math/tex; mode=display">
+\Delta v=(\Delta v_1,...,\Delta v_m)</script><script type="math/tex; mode=display">
+\Delta C \approx \bigtriangledown C \cdot \Delta v</script><script type="math/tex; mode=display">
+\bigtriangledown C \equiv (\frac{\part C}{\part v_1},...,\frac{\part C}{\part v_m})^T</script><script type="math/tex; mode=display">
+\Delta v = -\eta \bigtriangledown C</script><script type="math/tex; mode=display">
+v \rightarrow v' = v-\eta \bigtriangledown C</script><ul>
+<li><strong>使用梯度下降算法</strong><ul>
+<li>“位置”变量用权重和偏置两个变量代替：$w_k,b_l$。</li>
+<li>$w_k \rightarrow w_k’= w_k - \eta \frac {\partial C}{\partial w_k}$</li>
+<li>$b_l \rightarrow b_l’= b_l - \eta \frac {\partial C}{\partial b_L}$</li>
+<li>问题：$C= \frac{1} n \Sigma_x \bigtriangledown C_x$是普及每个训练样本代价$C_x \equiv \frac {||y(x)-a||^2} {2}$的平均值。在实践中，为了计算梯度$\bigtriangledown C$，我们需要为每个训练输入$x$单独的计算梯度值$\bigtriangledown C_x$，然后求平均值，这蒋辉使学习变得相当缓慢。</li>
+<li>方案：<strong>随机梯度下降</strong><br>其思想：随机选取小量训练样本来计算$\bigtriangledown C_x$进而估算梯度$\bigtriangledown C$。,<br>随机选取小量的m个训练输入来工作，我们将其标记为$X_1,…,X_m$ ，称为<strong>小批量数据（mini-batcch)</strong>。假设足够大，我们期望$\bigtriangledown C_{X_j}$的平均值大致等于整个$\bigtriangledown C_x$的平均值，即：$\frac{\Sigma^m_{j=1} \bigtriangledown C_{X_j}}{m} \approx \frac{\Sigma_{x} \bigtriangledown C_{x}}{n} = \bigtriangledown C $<br>$\bigtriangledown C \approx \frac{1} {m} \sum ^m_{j=1} \bigtriangledown C_{X}$ </li>
+<li>将其明确地和神经网路的学习联系起来，假设$w_k$和$b_l$表示神经网路中 权重和偏置，梯度下降通过随机地选取并训练输入的小批量数据来工作<br>$w_k \rightarrow w_k’ = w_k - \frac{\eta}{m} \sum_j \frac{\partial C_{X_j}}{\partial w_k}$<br>$b_l \rightarrow b_l’ = b_l - \frac{\eta}{m} \sum_j \frac{\partial C_{X_j}}{\partial b_l}$<br>其中两个求和符号实在当前小批量数据中的所有训练样本$X_j$上进行的。然后我们再挑选另一随机选定的小批量数据去训练，直到我们用完了所有的训练输入，这被称为<strong>完成了一个训练迭代期(epoch)</strong>,然后我们就会开始 另一个新的训练迭代期。</li>
+</ul>
+</li>
+</ul>
+<h2 id="实现我们的网络来分类数字"><a href="#实现我们的网络来分类数字" class="headerlink" title="实现我们的网络来分类数字"></a>实现我们的网络来分类数字</h2><h1 id="反向传播算法如何工作"><a href="#反向传播算法如何工作" class="headerlink" title="反向传播算法如何工作"></a>反向传播算法如何工作</h1><h1 id="改进神经网络的学习方法"><a href="#改进神经网络的学习方法" class="headerlink" title="改进神经网络的学习方法"></a>改进神经网络的学习方法</h1><h1 id="神经网络可以计算任何函数的可视化证明"><a href="#神经网络可以计算任何函数的可视化证明" class="headerlink" title="神经网络可以计算任何函数的可视化证明"></a>神经网络可以计算任何函数的可视化证明</h1><h1 id="深度神经网络为何很难训练"><a href="#深度神经网络为何很难训练" class="headerlink" title="深度神经网络为何很难训练"></a>深度神经网络为何很难训练</h1><h1 id="深度学习"><a href="#深度学习" class="headerlink" title="深度学习"></a>深度学习</h1>]]></content>
+      <categories>
+        <category>神经网络</category>
+      </categories>
+      <tags>
+        <tag>神经网络</tag>
       </tags>
   </entry>
   <entry>
@@ -1019,23 +1031,5 @@ v \rightarrow v' = v-\eta \bigtriangledown C</script><ul>
 <li>递归算法的效率往往不如非递归算法，可以设计非递归的排序算法：使用一个堆栈，在一次分划操作后，将其中一个子序列范围的上下界进栈保存，而对另一个序列继续进行分划排序。当对此子序列排序时，仍将分划的到的一个子序列的上下界进栈保存，对另一个子序列继续进行排序。直到足够小为止，再从栈中取出保存的某个尚未排序的子序列上下界，对该子序列进行快速排序。</li>
 </ol>
 <h3 id="选择问题"><a href="#选择问题" class="headerlink" title="选择问题"></a>选择问题</h3><h3 id="斯特拉森矩阵乘法"><a href="#斯特拉森矩阵乘法" class="headerlink" title="斯特拉森矩阵乘法"></a>斯特拉森矩阵乘法</h3>]]></content>
-  </entry>
-  <entry>
-    <title>vscode使用指南</title>
-    <url>/2021/03/05/vscode%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/</url>
-    <content><![CDATA[]]></content>
-  </entry>
-  <entry>
-    <title>基于CNN+BiSLTM+CTC的智能发票识别系统</title>
-    <url>/2021/03/12/%E5%9F%BA%E4%BA%8ECNN-BiSLTM-CTC%E7%9A%84%E6%99%BA%E8%83%BD%E5%8F%91%E7%A5%A8%E8%AF%86%E5%88%AB%E7%B3%BB%E7%BB%9F/</url>
-    <content><![CDATA[<a id="more"></a>
-<h1 id="CNN-卷积神经网络"><a href="#CNN-卷积神经网络" class="headerlink" title="CNN 卷积神经网络"></a>CNN 卷积神经网络</h1><h2 id="概览"><a href="#概览" class="headerlink" title="概览"></a>概览</h2><h3 id="卷积神经网络"><a href="#卷积神经网络" class="headerlink" title="卷积神经网络"></a>卷积神经网络</h3><p><strong>Convolutional Neural Network</strong> 是一种前馈神经网络，它的神经元可以响应一部分覆盖范围内的周围单元，对于大型图像处理有出色的表现。</p>
-<p>与普通神经网络非常相似，他们都具有可学习的权重和偏置常量(biases)的神经元组成。每个神经元都接受一些输入，并做一些点积计算，输出是每个分类的分数，普通神经网络里的一些计算技巧在这里依然适用。</p>
-<p><strong>不同的是</strong>：卷积神经网络输入的是图像，可以让我们把特定的性质编码入网络结构，使我们的前馈函数更加有效率，并减少了大量参数。</p>
-<h3 id="具有三维体积的神经元-3D-volumes-of-neurons"><a href="#具有三维体积的神经元-3D-volumes-of-neurons" class="headerlink" title="具有三维体积的神经元 (3D volumes of neurons)"></a>具有三维体积的神经元 (3D volumes of neurons)</h3><p>卷积神经网络利用输入是图片的特点，将神经元设计成三个维度：<strong>width</strong>, <strong>height</strong>, <strong>depth</strong>(注意：这里的depth不是指神经元的深度，而是用来描述神经元的)。比如输入的大小是32x32x3(rgb)，那么输入的神经元也就具有32x32x3的维度。   </p>
-<h1 id="BiSLTM"><a href="#BiSLTM" class="headerlink" title="BiSLTM"></a>BiSLTM</h1><h1 id="CTC"><a href="#CTC" class="headerlink" title="CTC"></a>CTC</h1>]]></content>
-      <tags>
-        <tag>神经网络</tag>
-      </tags>
   </entry>
 </search>
