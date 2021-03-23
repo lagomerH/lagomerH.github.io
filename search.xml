@@ -652,7 +652,7 @@ v \rightarrow v' = v-\eta \bigtriangledown C</script><ul>
       </tags>
   </entry>
   <entry>
-    <title></title>
+    <title>蓝桥杯</title>
     <url>/2021/03/05/%E8%93%9D%E6%A1%A5%E6%9D%AF/</url>
     <content><![CDATA[<p><em>2021年蓝桥杯准备笔记。</em><br><a id="more"></a></p>
 <h1 id="last"><a href="#last" class="headerlink" title="last"></a>last</h1><h2 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h2><p>末尾以<code>\0</code>结束的字符型数组称为字符串。值得强调的是只有以<code>\0</code>结束的才算字符串，否则只能算字符数组。</p>
