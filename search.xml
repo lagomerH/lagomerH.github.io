@@ -787,7 +787,7 @@ v \rightarrow v' = v-\eta \bigtriangledown C</script><ul>
 </ul>
 <figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
 <h4 id="I后缀表达式"><a href="#I后缀表达式" class="headerlink" title="I后缀表达式"></a>I后缀表达式</h4><p>本题与后缀表达式相关知识关系buda<br><strong>解题思路</strong>：经过归纳总结对题中出现的几种情况进行分别讨论</p>
-<h1 id="语言基础篇"><a href="#语言基础篇" class="headerlink" title="语言基础篇"></a>语言基础篇</h1><h2 id="模板"><a href="#模板" class="headerlink" title="模板"></a>模板</h2><h3 id="函数模板"><a href="#函数模板" class="headerlink" title="函数模板"></a>函数模板</h3><p><strong>函数模板的格式</strong>：</p>
+<h3 id="2019A组省赛"><a href="#2019A组省赛" class="headerlink" title="2019A组省赛"></a>2019A组省赛</h3><h4 id="E"><a href="#E" class="headerlink" title="E"></a>E</h4><h1 id="语言基础篇"><a href="#语言基础篇" class="headerlink" title="语言基础篇"></a>语言基础篇</h1><h2 id="模板"><a href="#模板" class="headerlink" title="模板"></a>模板</h2><h3 id="函数模板"><a href="#函数模板" class="headerlink" title="函数模板"></a>函数模板</h3><p><strong>函数模板的格式</strong>：</p>
 <figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">template</span> &lt;<span class="class"><span class="keyword">class</span> 形参名, <span class="keyword">class</span> 形参名, ......&gt;</span> 返回值类型 函数名(参数列表)&#123;</span><br><span class="line">    函数体</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">template</span> &lt;<span class="class"><span class="keyword">class</span> <span class="title">T</span>&gt;</span> <span class="function"><span class="keyword">void</span> <span class="title">swap</span><span class="params">(T&amp; a, T&amp; b)</span></span>&#123;&#125;</span><br></pre></td></tr></table></figure>
 <h2 id="位运算"><a href="#位运算" class="headerlink" title="位运算"></a>位运算</h2><p>位运算的奇巧淫技：</p>
 <ul>
@@ -1094,5 +1094,17 @@ v \rightarrow v' = v-\eta \bigtriangledown C</script><ul>
 <h3 id="最佳合并模式"><a href="#最佳合并模式" class="headerlink" title="最佳合并模式"></a>最佳合并模式</h3><p><em>构造哈夫曼树的哈夫曼算法和设计K路合并外排序的最佳方案的方法都属于最佳合并模式问题。</em></p>
 <p><strong>问题描述</strong>：<br>两路合并外排序算法通过反复执行将两个有序子文件合并成一个有序文件的操作，最终将n个长度不等的有序子文件合并成一个有序文件。</p>
 <h3 id="最小代价生成树"><a href="#最小代价生成树" class="headerlink" title="最小代价生成树"></a>最小代价生成树</h3><h3 id="单源最短路径"><a href="#单源最短路径" class="headerlink" title="单源最短路径"></a>单源最短路径</h3><h3 id="磁带最优存储"><a href="#磁带最优存储" class="headerlink" title="磁带最优存储"></a>磁带最优存储</h3><h3 id="贪心算法的基本要素"><a href="#贪心算法的基本要素" class="headerlink" title="贪心算法的基本要素"></a>贪心算法的基本要素</h3>]]></content>
+  </entry>
+  <entry>
+    <title>wordpress博客搭建</title>
+    <url>/2021/03/27/wordpress%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/</url>
+    <content><![CDATA[<p><em>记录wordpress个人博客搭建过程。</em><br><a id="more"></a></p>
+]]></content>
+  </entry>
+  <entry>
+    <title>随笔</title>
+    <url>/2021/03/26/%E9%9A%8F%E7%AC%94/</url>
+    <content><![CDATA[<h1 id="服务器"><a href="#服务器" class="headerlink" title="服务器"></a>服务器</h1><p><strong>带宽</strong>：</p>
+]]></content>
   </entry>
 </search>
